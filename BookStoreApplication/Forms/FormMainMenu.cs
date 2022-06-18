@@ -100,7 +100,8 @@ namespace BookStoreApplication
 
         private void button_Basket_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            label_Title.Text = "Basket";
+            OpenChildForm(new Forms.FormBasket(), sender);
         }
 
         private void button_AddingInfo_Click(object sender, EventArgs e)

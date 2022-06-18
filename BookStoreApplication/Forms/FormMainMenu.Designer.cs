@@ -43,8 +43,8 @@ namespace BookStoreApplication
             this.button_Close = new System.Windows.Forms.Button();
             this.label_Title = new System.Windows.Forms.Label();
             this.panel_Desktop = new System.Windows.Forms.Panel();
-            this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panel_TitleBar.SuspendLayout();
@@ -63,7 +63,7 @@ namespace BookStoreApplication
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(220, 556);
+            this.panelMenu.Size = new System.Drawing.Size(220, 761);
             this.panelMenu.TabIndex = 0;
             // 
             // button_Settings
@@ -175,7 +175,7 @@ namespace BookStoreApplication
             this.panel_TitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_TitleBar.Location = new System.Drawing.Point(220, 0);
             this.panel_TitleBar.Name = "panel_TitleBar";
-            this.panel_TitleBar.Size = new System.Drawing.Size(847, 80);
+            this.panel_TitleBar.Size = new System.Drawing.Size(914, 80);
             this.panel_TitleBar.TabIndex = 0;
             // 
             // button_Close
@@ -212,31 +212,32 @@ namespace BookStoreApplication
             this.panel_Desktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Desktop.Location = new System.Drawing.Point(220, 80);
             this.panel_Desktop.Name = "panel_Desktop";
-            this.panel_Desktop.Size = new System.Drawing.Size(847, 476);
+            this.panel_Desktop.Size = new System.Drawing.Size(914, 681);
             this.panel_Desktop.TabIndex = 1;
+            // 
+            // progressBar
+            // 
+            this.progressBar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.progressBar.Location = new System.Drawing.Point(424, 328);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(40, 14);
+            this.progressBar.Step = 1;
+            this.progressBar.TabIndex = 0;
             // 
             // backgroundWorker
             // 
             this.backgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker_DoWork);
             this.backgroundWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker_ProgressChanged);
             // 
-            // progressBar
-            // 
-            this.progressBar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.progressBar.Location = new System.Drawing.Point(390, 226);
-            this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(40, 14);
-            this.progressBar.Step = 1;
-            this.progressBar.TabIndex = 0;
-            // 
             // FormMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 556);
+            this.ClientSize = new System.Drawing.Size(1134, 761);
             this.Controls.Add(this.panel_Desktop);
             this.Controls.Add(this.panel_TitleBar);
             this.Controls.Add(this.panelMenu);
+            this.MinimumSize = new System.Drawing.Size(1150, 600);
             this.Name = "FormMainMenu";
             this.Text = "FormMainMenu";
             this.panelMenu.ResumeLayout(false);

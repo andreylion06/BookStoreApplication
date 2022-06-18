@@ -52,6 +52,7 @@ namespace BookStoreApplication
                 {
                     GroupBox groupBox = (GroupBox)cntrls;
                     groupBox.ForeColor = ThemeColor.ChangeColorBrightness(ThemeColor.PrimaryColor, -0.5);
+                    LoadTheme(groupBox);
                 }
             }
         }

@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label_hrn2 = new System.Windows.Forms.Label();
             this.label_Title = new System.Windows.Forms.Label();
             this.textBox_Price = new System.Windows.Forms.TextBox();
@@ -52,12 +52,16 @@
             this.label_YearOfIssue = new System.Windows.Forms.Label();
             this.comboBox_Publisher = new System.Windows.Forms.ComboBox();
             this.groupBox_Books = new System.Windows.Forms.GroupBox();
+            this.button_CancelBook = new System.Windows.Forms.Button();
+            this.button_AddBook = new System.Windows.Forms.Button();
             this.groupBox_Authors = new System.Windows.Forms.GroupBox();
+            this.button_CancelAuthor = new System.Windows.Forms.Button();
             this.button_AddAuthor = new System.Windows.Forms.Button();
             this.label_Name = new System.Windows.Forms.Label();
             this.textBox_AuthorName = new System.Windows.Forms.TextBox();
             this.dataGridView_Author = new System.Windows.Forms.DataGridView();
             this.groupBox_Publishers = new System.Windows.Forms.GroupBox();
+            this.button_CancelPublisher = new System.Windows.Forms.Button();
             this.label_PhoneNumber = new System.Windows.Forms.Label();
             this.textBox_PhoneNumber = new System.Windows.Forms.TextBox();
             this.label_Office = new System.Windows.Forms.Label();
@@ -67,15 +71,11 @@
             this.textBox_PublisherName = new System.Windows.Forms.TextBox();
             this.dataGridView_Publisher = new System.Windows.Forms.DataGridView();
             this.groupBox_Genre = new System.Windows.Forms.GroupBox();
+            this.button_CancelGenre = new System.Windows.Forms.Button();
             this.button_AddGenre = new System.Windows.Forms.Button();
             this.label_GenreName = new System.Windows.Forms.Label();
             this.textBox_GenreName = new System.Windows.Forms.TextBox();
             this.dataGridView_Genre = new System.Windows.Forms.DataGridView();
-            this.button_CancelBook = new System.Windows.Forms.Button();
-            this.button_AddBook = new System.Windows.Forms.Button();
-            this.button_CancelAuthor = new System.Windows.Forms.Button();
-            this.button_CancelPublisher = new System.Windows.Forms.Button();
-            this.button_CancelGenre = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_QuantityInStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_NumberOfPages)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Year)).BeginInit();
@@ -175,6 +175,11 @@
             this.numericUpDown_QuantityInStock.Name = "numericUpDown_QuantityInStock";
             this.numericUpDown_QuantityInStock.Size = new System.Drawing.Size(290, 49);
             this.numericUpDown_QuantityInStock.TabIndex = 67;
+            this.numericUpDown_QuantityInStock.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label_Publisher
             // 
@@ -223,6 +228,11 @@
             this.numericUpDown_NumberOfPages.Name = "numericUpDown_NumberOfPages";
             this.numericUpDown_NumberOfPages.Size = new System.Drawing.Size(290, 49);
             this.numericUpDown_NumberOfPages.TabIndex = 66;
+            this.numericUpDown_NumberOfPages.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // numericUpDown_Year
             // 
@@ -327,6 +337,29 @@
             this.groupBox_Books.TabIndex = 60;
             this.groupBox_Books.TabStop = false;
             // 
+            // button_CancelBook
+            // 
+            this.button_CancelBook.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_CancelBook.Location = new System.Drawing.Point(730, 404);
+            this.button_CancelBook.Name = "button_CancelBook";
+            this.button_CancelBook.Size = new System.Drawing.Size(118, 65);
+            this.button_CancelBook.TabIndex = 77;
+            this.button_CancelBook.Text = "Cancel Editting";
+            this.button_CancelBook.UseVisualStyleBackColor = true;
+            this.button_CancelBook.Visible = false;
+            this.button_CancelBook.Click += new System.EventHandler(this.button_CancelBook_Click);
+            // 
+            // button_AddBook
+            // 
+            this.button_AddBook.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_AddBook.Location = new System.Drawing.Point(13, 404);
+            this.button_AddBook.Name = "button_AddBook";
+            this.button_AddBook.Size = new System.Drawing.Size(835, 65);
+            this.button_AddBook.TabIndex = 69;
+            this.button_AddBook.Text = "Add";
+            this.button_AddBook.UseVisualStyleBackColor = true;
+            this.button_AddBook.Click += new System.EventHandler(this.button_AddBook_Click);
+            // 
             // groupBox_Authors
             // 
             this.groupBox_Authors.Controls.Add(this.button_CancelAuthor);
@@ -339,6 +372,18 @@
             this.groupBox_Authors.Size = new System.Drawing.Size(780, 483);
             this.groupBox_Authors.TabIndex = 70;
             this.groupBox_Authors.TabStop = false;
+            // 
+            // button_CancelAuthor
+            // 
+            this.button_CancelAuthor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_CancelAuthor.Location = new System.Drawing.Point(637, 162);
+            this.button_CancelAuthor.Name = "button_CancelAuthor";
+            this.button_CancelAuthor.Size = new System.Drawing.Size(118, 65);
+            this.button_CancelAuthor.TabIndex = 78;
+            this.button_CancelAuthor.Text = "Cancel Editting";
+            this.button_CancelAuthor.UseVisualStyleBackColor = true;
+            this.button_CancelAuthor.Visible = false;
+            this.button_CancelAuthor.Click += new System.EventHandler(this.button_CancelAuthor_Click);
             // 
             // button_AddAuthor
             // 
@@ -378,24 +423,24 @@
             this.dataGridView_Author.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_Author.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView_Author.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_Author.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_Author.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView_Author.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle26.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_Author.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_Author.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView_Author.Location = new System.Drawing.Point(32, 25);
             this.dataGridView_Author.Name = "dataGridView_Author";
             this.dataGridView_Author.ReadOnly = true;
@@ -420,6 +465,18 @@
             this.groupBox_Publishers.Size = new System.Drawing.Size(862, 410);
             this.groupBox_Publishers.TabIndex = 74;
             this.groupBox_Publishers.TabStop = false;
+            // 
+            // button_CancelPublisher
+            // 
+            this.button_CancelPublisher.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_CancelPublisher.Location = new System.Drawing.Point(727, 317);
+            this.button_CancelPublisher.Name = "button_CancelPublisher";
+            this.button_CancelPublisher.Size = new System.Drawing.Size(118, 65);
+            this.button_CancelPublisher.TabIndex = 79;
+            this.button_CancelPublisher.Text = "Cancel Editting";
+            this.button_CancelPublisher.UseVisualStyleBackColor = true;
+            this.button_CancelPublisher.Visible = false;
+            this.button_CancelPublisher.Click += new System.EventHandler(this.button_CancelPublisher_Click);
             // 
             // label_PhoneNumber
             // 
@@ -500,24 +557,24 @@
             this.dataGridView_Publisher.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_Publisher.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView_Publisher.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_Publisher.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_Publisher.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridView_Publisher.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle28.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_Publisher.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_Publisher.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridView_Publisher.Location = new System.Drawing.Point(13, 28);
             this.dataGridView_Publisher.MultiSelect = false;
             this.dataGridView_Publisher.Name = "dataGridView_Publisher";
@@ -539,6 +596,18 @@
             this.groupBox_Genre.Size = new System.Drawing.Size(780, 410);
             this.groupBox_Genre.TabIndex = 74;
             this.groupBox_Genre.TabStop = false;
+            // 
+            // button_CancelGenre
+            // 
+            this.button_CancelGenre.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_CancelGenre.Location = new System.Drawing.Point(637, 162);
+            this.button_CancelGenre.Name = "button_CancelGenre";
+            this.button_CancelGenre.Size = new System.Drawing.Size(118, 65);
+            this.button_CancelGenre.TabIndex = 81;
+            this.button_CancelGenre.Text = "Cancel Editting";
+            this.button_CancelGenre.UseVisualStyleBackColor = true;
+            this.button_CancelGenre.Visible = false;
+            this.button_CancelGenre.Click += new System.EventHandler(this.button_CancelGenre_Click);
             // 
             // button_AddGenre
             // 
@@ -578,24 +647,24 @@
             this.dataGridView_Genre.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_Genre.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView_Genre.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_Genre.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_Genre.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridView_Genre.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle30.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_Genre.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_Genre.DefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridView_Genre.Location = new System.Drawing.Point(32, 25);
             this.dataGridView_Genre.MultiSelect = false;
             this.dataGridView_Genre.Name = "dataGridView_Genre";
@@ -605,69 +674,11 @@
             this.dataGridView_Genre.TabIndex = 71;
             this.dataGridView_Genre.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView_Genre_MouseClick);
             // 
-            // button_CancelBook
-            // 
-            this.button_CancelBook.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_CancelBook.Location = new System.Drawing.Point(730, 404);
-            this.button_CancelBook.Name = "button_CancelBook";
-            this.button_CancelBook.Size = new System.Drawing.Size(118, 65);
-            this.button_CancelBook.TabIndex = 77;
-            this.button_CancelBook.Text = "Cancel Editting";
-            this.button_CancelBook.UseVisualStyleBackColor = true;
-            this.button_CancelBook.Visible = false;
-            this.button_CancelBook.Click += new System.EventHandler(this.button_CancelBook_Click);
-            // 
-            // button_AddBook
-            // 
-            this.button_AddBook.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_AddBook.Location = new System.Drawing.Point(13, 404);
-            this.button_AddBook.Name = "button_AddBook";
-            this.button_AddBook.Size = new System.Drawing.Size(835, 65);
-            this.button_AddBook.TabIndex = 69;
-            this.button_AddBook.Text = "Add";
-            this.button_AddBook.UseVisualStyleBackColor = true;
-            this.button_AddBook.Click += new System.EventHandler(this.button_AddBook_Click);
-            // 
-            // button_CancelAuthor
-            // 
-            this.button_CancelAuthor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_CancelAuthor.Location = new System.Drawing.Point(637, 162);
-            this.button_CancelAuthor.Name = "button_CancelAuthor";
-            this.button_CancelAuthor.Size = new System.Drawing.Size(118, 65);
-            this.button_CancelAuthor.TabIndex = 78;
-            this.button_CancelAuthor.Text = "Cancel Editting";
-            this.button_CancelAuthor.UseVisualStyleBackColor = true;
-            this.button_CancelAuthor.Visible = false;
-            this.button_CancelAuthor.Click += new System.EventHandler(this.button_CancelAuthor_Click);
-            // 
-            // button_CancelPublisher
-            // 
-            this.button_CancelPublisher.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_CancelPublisher.Location = new System.Drawing.Point(727, 317);
-            this.button_CancelPublisher.Name = "button_CancelPublisher";
-            this.button_CancelPublisher.Size = new System.Drawing.Size(118, 65);
-            this.button_CancelPublisher.TabIndex = 79;
-            this.button_CancelPublisher.Text = "Cancel Editting";
-            this.button_CancelPublisher.UseVisualStyleBackColor = true;
-            this.button_CancelPublisher.Visible = false;
-            this.button_CancelPublisher.Click += new System.EventHandler(this.button_CancelPublisher_Click);
-            // 
-            // button_CancelGenre
-            // 
-            this.button_CancelGenre.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_CancelGenre.Location = new System.Drawing.Point(637, 162);
-            this.button_CancelGenre.Name = "button_CancelGenre";
-            this.button_CancelGenre.Size = new System.Drawing.Size(118, 65);
-            this.button_CancelGenre.TabIndex = 81;
-            this.button_CancelGenre.Text = "Cancel Editting";
-            this.button_CancelGenre.UseVisualStyleBackColor = true;
-            this.button_CancelGenre.Visible = false;
-            this.button_CancelGenre.Click += new System.EventHandler(this.button_CancelGenre_Click);
-            // 
             // FormAdding
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1757, 936);
             this.Controls.Add(this.groupBox_Genre);

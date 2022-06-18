@@ -12,7 +12,7 @@ using System.Windows.Forms;
 namespace BookStoreApplication.Forms
 {
     //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    //Добавить возможность добавлять товар даже после перехода по редактировке
+    //searching
     //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     public partial class FormAdding : Form
     {
@@ -25,9 +25,7 @@ namespace BookStoreApplication.Forms
 
         private void FormAdding_Load(object sender, EventArgs e)
         {
-            foreach (Control grpbox in this.Controls)
-                if (grpbox.GetType() == typeof(GroupBox))
-                    SetChildFormDesign.LoadTheme(grpbox);
+            SetChildFormDesign.LoadTheme(this);
             LoadComboboxes();
             LoadDataGridView_Authors();
             LoadDataGridView_Publishers();
@@ -110,7 +108,11 @@ namespace BookStoreApplication.Forms
             }
             MessageBox.Show(message, "Information",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
-            if (IdEdit == -1) ClearFields.Clear(groupBox_Books);
+            if (IdEdit == -1)
+            {
+                ClearFields.Clear(groupBox_Books);
+                numericUpDown_Year.Value = DateTime.Now.Year;
+            }
             else
             {
                 this.Close();
@@ -223,6 +225,8 @@ namespace BookStoreApplication.Forms
                         author.ID = IdEditAuthor;
                         db.Entry(author).State = System.Data.Entity.EntityState.Modified;
                         message = $"Author '{author.FullName}' was edited successfully!";
+                        button_AddAuthor.Size = new Size(329, 65);
+                        button_CancelAuthor.Visible = false;
                         button_AddAuthor.Text = "Add";
                         IdEditAuthor = -1;
                     }
@@ -231,9 +235,9 @@ namespace BookStoreApplication.Forms
             }
             LoadDataGridView_Authors();
             LoadComboBox_Author();
+            ClearFields.Clear(groupBox_Authors);
             MessageBox.Show(message, "Information",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
-            ClearFields.Clear(groupBox_Authors);
         }
 
         private void EditAuthor(object sender, System.EventArgs e)
@@ -311,32 +315,31 @@ namespace BookStoreApplication.Forms
                 PhoneNumber = textBox_PhoneNumber.Text.Trim()
             };
 
-            string message = $"Publisher '{ publisher.Name }' already exists!";
+            string message = $"Publisher '{ publisher.Name }' was added successfully!";
             using (BookStoreDB db = new BookStoreDB())
             {
-                if (!db.Publisher.Any(pub => pub.Name == publisher.Name))
+
+                if (IdEditPublisher == -1)
                 {
-                    if (IdEditPublisher == -1)
-                    {
-                        db.Publisher.Add(publisher);
-                        message = $"Publisher '{ publisher.Name }' was added successfully!";
-                    }
-                    else
-                    {
-                        publisher.ID = IdEditPublisher;
-                        db.Entry(publisher).State = System.Data.Entity.EntityState.Modified;
-                        message = $"Publisher '{ publisher.Name }' was edited successfully!";
-                        button_AddPublisher.Text = "Add";
-                        IdEditPublisher = -1;
-                    }
-                    db.SaveChanges();
+                    db.Publisher.Add(publisher);
                 }
+                else
+                {
+                    publisher.ID = IdEditPublisher;
+                    db.Entry(publisher).State = System.Data.Entity.EntityState.Modified;
+                    message = $"Publisher '{ publisher.Name }' was edited successfully!";
+                    button_AddPublisher.Text = "Add";
+                    button_AddPublisher.Size = new Size(293, 65);
+                    button_CancelPublisher.Visible = false;
+                    IdEditPublisher = -1;
+                }
+                db.SaveChanges();
             }
             LoadDataGridView_Publishers();
             LoadComboBox_Publisher();
+            ClearFields.Clear(groupBox_Publishers);
             MessageBox.Show(message, "Information",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
-            ClearFields.Clear(groupBox_Publishers);
             //!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             //Regex for phone textbox
             //!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -419,6 +422,8 @@ namespace BookStoreApplication.Forms
                         db.Entry(genre).State = System.Data.Entity.EntityState.Modified;
                         message = $"Genre '{ genre.Name }' was edited successfully!";
                         button_AddGenre.Text = "Add";
+                        button_AddGenre.Size = new Size(329, 65);
+                        button_CancelGenre.Visible = false;
                         IdEditGenre = -1;
                     }
                     db.SaveChanges();
@@ -426,9 +431,9 @@ namespace BookStoreApplication.Forms
             }
             LoadDataGridView_Genre();
             LoadComboBox_Genre();
+            ClearFields.Clear(groupBox_Genre);
             MessageBox.Show(message, "Information",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
-            ClearFields.Clear(groupBox_Genre);
         }
 
         private void EditGenre(object sender, System.EventArgs e)

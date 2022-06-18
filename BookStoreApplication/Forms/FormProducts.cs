@@ -12,11 +12,13 @@ using System.Threading;
 using System.Diagnostics;
 using Models;
 using MainForm.Models;
+using BookStoreApplication.HelperClasses;
 
 namespace BookStoreApplication.Forms
 {
     public partial class FormProducts : Form
     {
+        //Категории поиска
         public FormProducts()
         {
             InitializeComponent();
@@ -25,7 +27,6 @@ namespace BookStoreApplication.Forms
         {
             LoadDataGridViewBooks();
             SetChildFormDesign.LoadTheme(this);
-            SetChildFormDesign.LoadTheme(groupBox_Basket);
         }
 
         public void LoadDataGridViewBooks()
@@ -54,6 +55,7 @@ namespace BookStoreApplication.Forms
         private void dataGridView_Products_MouseClick(object sender, MouseEventArgs e)
         {
             int currentMouseOverRow = dataGridView_Products.HitTest(e.X, e.Y).RowIndex;
+            if (currentMouseOverRow == -1) return;
             dataGridView_Products.Rows[currentMouseOverRow].Selected = true;
             if (e.Button == MouseButtons.Right)
             {
@@ -75,10 +77,15 @@ namespace BookStoreApplication.Forms
                 {
                     Book book = db.Book.SingleOrDefault(x => x.ID == productId);
                     Author author = db.Author.SingleOrDefault(x => x.ID == book.AuthorID);
-                    numericUpDown_ProductToBasket.Maximum = book.QuantityInStock;
-                    textBox_ProductToBasket.Text = $"{book.Title}, {author.FullName}, {book.YearOfIssue}";
+                    numericUpDown_Quantity.Enabled = true;
+                    numericUpDown_Quantity.Maximum = book.QuantityInStock;
+                    textBox_Title.Text = book.Title;
+                    textBox_AuthorName.Text = author.FullName;
+                    textBox_Year.Text = book.YearOfIssue.ToString();
+                    //textBox_ProductToBasket.Text = $"{book.Title}, {author.FullName}, {book.YearOfIssue}";
                 }
                 groupBox_Basket.Visible = true;
+                SetLabelTotal();
             }
         }
 
@@ -88,29 +95,25 @@ namespace BookStoreApplication.Forms
             (System.Windows.Forms.Application.OpenForms["FormMainMenu"]
                 as FormMainMenu).GoToFormAddingFromContext((int)dataGridView_Products.SelectedRows[0].Cells[0].Value);
         }
+
         public void DeleteItem(object sender, System.EventArgs e)
         {
-            int index = (int)dataGridView_Products.SelectedRows[0].Cells[0].Value;
             if (MessageBox.Show("Are you sure you want to delete this data?", "Warning",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                int index = (int)dataGridView_Products.SelectedRows[0].Cells[0].Value;
                 using (BookStoreDB db = new BookStoreDB())
                 {
                     db.Book.RemoveRange(db.Book.Where(x => x.ID == index));
                     db.SaveChanges();
-                    LoadDataGridViewBooks();
                 }
+                LoadDataGridViewBooks();
             }
         }
 
         public void AddItem(object sender, System.EventArgs e)
         {
             (System.Windows.Forms.Application.OpenForms["FormMainMenu"] as FormMainMenu).GoToFormAddingFromContext();
-        }
-
-        public void AddToBasket(object sender, System.EventArgs e)
-        {
-
         }
 
         private void textBox_Search_KeyUp(object sender, KeyEventArgs e)
@@ -130,6 +133,7 @@ namespace BookStoreApplication.Forms
                     SetDataGridViewBooksColumns();
                 }
             }
+            if (textBox_Title.Text.Length != 0) ClearFields.Clear(groupBox_Basket);
         }
 
         private void dataGridView_Products_DoubleClick(object sender, EventArgs e)
@@ -141,6 +145,7 @@ namespace BookStoreApplication.Forms
 
         private void button_AddToBasket_Click(object sender, EventArgs e)
         {
+            if (dataGridView_Products.SelectedRows.Count == 0) return;
             int selectedRowIndex = dataGridView_Products.SelectedCells[0].RowIndex;
             int productId = (int)dataGridView_Products.Rows[selectedRowIndex].Cells[0].Value;
             using (BookStoreDB db = new BookStoreDB())
@@ -151,23 +156,31 @@ namespace BookStoreApplication.Forms
                     basket = new Basket()
                     {
                         BookID = productId,
-                        Count = (int)numericUpDown_ProductToBasket.Value   
+                        Count = (int)numericUpDown_Quantity.Value
                     };
                     db.Basket.Add(basket);
                 }
                 else
                 {
-                    basket.Count += (int)numericUpDown_ProductToBasket.Value;
+                    basket.Count += (int)numericUpDown_Quantity.Value;
                     db.Entry(basket).State = System.Data.Entity.EntityState.Modified;
                 }
-                Book book = db.Book.SingleOrDefault(x => x.ID == productId);
-                book.QuantityInStock -= (int)numericUpDown_ProductToBasket.Value;
-                db.Entry(book).State = System.Data.Entity.EntityState.Modified;
+                //Book book = db.Book.SingleOrDefault(x => x.ID == productId);
+                //book.QuantityInStock -= (int)numericUpDown_ProductToBasket.Value;
+                //db.Entry(book).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
-                LoadDataGridViewBooks();
-                //dataGridView_Products.Rows[selectedRowIndex].Selected = true;
-                ClearFields.Clear(groupBox_Basket);
             }
+            LoadDataGridViewBooks();
+            ClearFields.Clear(groupBox_AddingInBasket);
+            numericUpDown_Quantity.Enabled = false;
+            SetLabelTotal();
         }
+
+        private void SetLabelTotal()
+        {
+            label_Total.Text = CountTotal.Total().ToString();
+        }
+
+        
     }
 }
