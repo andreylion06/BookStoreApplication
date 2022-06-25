@@ -20,7 +20,7 @@ namespace BookStoreApplication
                 else if (cntrls.GetType() == typeof(NumericUpDown))
                 {
                     NumericUpDown numericUpDown = (NumericUpDown)cntrls;
-                    numericUpDown.Value = 1;
+                    numericUpDown.Value = 0;
                 }
                 else if (cntrls.GetType() == typeof(ComboBox))
                 {

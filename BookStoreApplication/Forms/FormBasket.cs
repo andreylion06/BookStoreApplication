@@ -80,7 +80,7 @@ namespace BookStoreApplication.Forms
             //textBox_Basket.Text = text;
         }
 
-            private void dataGridView_Basket_DoubleClick(object sender, EventArgs e)
+        private void dataGridView_Basket_DoubleClick(object sender, EventArgs e)
         {
             dataGridView_Basket.Rows[dataGridView_Basket.SelectedCells[0]
                 .RowIndex].Selected = true;
@@ -115,18 +115,14 @@ namespace BookStoreApplication.Forms
             {
                 int count = db.Basket.SingleOrDefault(x => x.ID == index).Count;
                 if (count == 0) DeleteSelectedItem();
-                else dataGridView_Basket.SelectedRows[0].Cells[4].Value = count;
+                else dataGridView_Basket.SelectedRows[0].Cells[5].Value = count;
             }
             SetLabelTotal();
         }
 
         private void RemoveItem(object sender, System.EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to remove this item from basket?", "Question",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                DeleteSelectedItem();
-            }
+            DeleteSelectedItem();
         }
 
         private void DeleteSelectedItem()
@@ -154,16 +150,23 @@ namespace BookStoreApplication.Forms
                 var basket = db.Basket.ToList();
                 foreach (var item in basket)
                 {
+                    Book book = db.Book.SingleOrDefault(x => x.ID == item.BookID);
+                    book.QuantityInStock -= item.Count;
+                    db.Entry(book).State = System.Data.Entity.EntityState.Modified;
                     Sales sale = new Sales()
                     {
                         BookID = item.BookID,
-                        DateOfSale = now
+                        DateOfSale = now,
+                        Count = item.Count
                     };
                     db.Sales.Add(sale);
+                    db.SaveChanges();
                 }
                 db.Database.ExecuteSqlCommand("TRUNCATE TABLE [Baskets]");
                 db.SaveChanges();
             }
+            dataGridView_Basket.Rows.Clear();
+            label_Total.Text = "0";
         }
     }
 }

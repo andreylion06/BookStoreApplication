@@ -16,5 +16,6 @@ namespace Models
         [ForeignKey("BookID")]
         public Book Book { get; set; }
         public DateTime DateOfSale { get; set; }
+        public int Count { get; set; }
     }
 }

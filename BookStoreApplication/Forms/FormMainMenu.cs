@@ -162,7 +162,7 @@ namespace BookStoreApplication
             label_Title.Text = "Adding or editting info";
             if (index != -1)
             {
-                formAdding.IdEdit = index;
+                formAdding.IdEditBook = index;
             }
             OpenChildForm(formAdding, button_AddingInfo);
         }

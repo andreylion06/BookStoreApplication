@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdding));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label_hrn2 = new System.Windows.Forms.Label();
             this.label_Title = new System.Windows.Forms.Label();
             this.textBox_Price = new System.Windows.Forms.TextBox();
@@ -55,14 +56,18 @@
             this.button_CancelBook = new System.Windows.Forms.Button();
             this.button_AddBook = new System.Windows.Forms.Button();
             this.groupBox_Authors = new System.Windows.Forms.GroupBox();
+            this.button_SearchAuthor = new System.Windows.Forms.Button();
+            this.textBox_SearchAuthor = new System.Windows.Forms.TextBox();
             this.button_CancelAuthor = new System.Windows.Forms.Button();
             this.button_AddAuthor = new System.Windows.Forms.Button();
             this.label_Name = new System.Windows.Forms.Label();
             this.textBox_AuthorName = new System.Windows.Forms.TextBox();
             this.dataGridView_Author = new System.Windows.Forms.DataGridView();
             this.groupBox_Publishers = new System.Windows.Forms.GroupBox();
+            this.button_SearchPublisher = new System.Windows.Forms.Button();
             this.button_CancelPublisher = new System.Windows.Forms.Button();
             this.label_PhoneNumber = new System.Windows.Forms.Label();
+            this.textBox_SearchPublisher = new System.Windows.Forms.TextBox();
             this.textBox_PhoneNumber = new System.Windows.Forms.TextBox();
             this.label_Office = new System.Windows.Forms.Label();
             this.textBox_Office = new System.Windows.Forms.TextBox();
@@ -70,8 +75,10 @@
             this.label_PublisherName = new System.Windows.Forms.Label();
             this.textBox_PublisherName = new System.Windows.Forms.TextBox();
             this.dataGridView_Publisher = new System.Windows.Forms.DataGridView();
-            this.groupBox_Genre = new System.Windows.Forms.GroupBox();
+            this.groupBox_Genres = new System.Windows.Forms.GroupBox();
+            this.button_SearchGenre = new System.Windows.Forms.Button();
             this.button_CancelGenre = new System.Windows.Forms.Button();
+            this.textBox_SearchGenre = new System.Windows.Forms.TextBox();
             this.button_AddGenre = new System.Windows.Forms.Button();
             this.label_GenreName = new System.Windows.Forms.Label();
             this.textBox_GenreName = new System.Windows.Forms.TextBox();
@@ -84,7 +91,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Author)).BeginInit();
             this.groupBox_Publishers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Publisher)).BeginInit();
-            this.groupBox_Genre.SuspendLayout();
+            this.groupBox_Genres.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Genre)).BeginInit();
             this.SuspendLayout();
             // 
@@ -274,8 +281,6 @@
             this.comboBox_Author.FormattingEnabled = true;
             this.comboBox_Author.IntegralHeight = false;
             this.comboBox_Author.ItemHeight = 42;
-            this.comboBox_Author.Items.AddRange(new object[] {
-            "Автор"});
             this.comboBox_Author.Location = new System.Drawing.Point(16, 140);
             this.comboBox_Author.Margin = new System.Windows.Forms.Padding(6);
             this.comboBox_Author.MaxDropDownItems = 5;
@@ -344,7 +349,7 @@
             this.button_CancelBook.Name = "button_CancelBook";
             this.button_CancelBook.Size = new System.Drawing.Size(118, 65);
             this.button_CancelBook.TabIndex = 77;
-            this.button_CancelBook.Text = "Cancel Editting";
+            this.button_CancelBook.Text = "Cancel Editing";
             this.button_CancelBook.UseVisualStyleBackColor = true;
             this.button_CancelBook.Visible = false;
             this.button_CancelBook.Click += new System.EventHandler(this.button_CancelBook_Click);
@@ -362,6 +367,8 @@
             // 
             // groupBox_Authors
             // 
+            this.groupBox_Authors.Controls.Add(this.button_SearchAuthor);
+            this.groupBox_Authors.Controls.Add(this.textBox_SearchAuthor);
             this.groupBox_Authors.Controls.Add(this.button_CancelAuthor);
             this.groupBox_Authors.Controls.Add(this.button_AddAuthor);
             this.groupBox_Authors.Controls.Add(this.label_Name);
@@ -373,14 +380,37 @@
             this.groupBox_Authors.TabIndex = 70;
             this.groupBox_Authors.TabStop = false;
             // 
+            // button_SearchAuthor
+            // 
+            this.button_SearchAuthor.BackColor = System.Drawing.SystemColors.Control;
+            this.button_SearchAuthor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_SearchAuthor.BackgroundImage")));
+            this.button_SearchAuthor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_SearchAuthor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_SearchAuthor.Location = new System.Drawing.Point(358, 31);
+            this.button_SearchAuthor.Name = "button_SearchAuthor";
+            this.button_SearchAuthor.Size = new System.Drawing.Size(44, 40);
+            this.button_SearchAuthor.TabIndex = 80;
+            this.button_SearchAuthor.UseVisualStyleBackColor = false;
+            // 
+            // textBox_SearchAuthor
+            // 
+            this.textBox_SearchAuthor.BackColor = System.Drawing.Color.White;
+            this.textBox_SearchAuthor.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_SearchAuthor.Location = new System.Drawing.Point(32, 31);
+            this.textBox_SearchAuthor.Margin = new System.Windows.Forms.Padding(6);
+            this.textBox_SearchAuthor.Name = "textBox_SearchAuthor";
+            this.textBox_SearchAuthor.Size = new System.Drawing.Size(326, 40);
+            this.textBox_SearchAuthor.TabIndex = 79;
+            this.textBox_SearchAuthor.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox_SearchAuthor_KeyUp);
+            // 
             // button_CancelAuthor
             // 
             this.button_CancelAuthor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_CancelAuthor.Location = new System.Drawing.Point(637, 162);
+            this.button_CancelAuthor.Location = new System.Drawing.Point(637, 182);
             this.button_CancelAuthor.Name = "button_CancelAuthor";
             this.button_CancelAuthor.Size = new System.Drawing.Size(118, 65);
             this.button_CancelAuthor.TabIndex = 78;
-            this.button_CancelAuthor.Text = "Cancel Editting";
+            this.button_CancelAuthor.Text = "Cancel Editing";
             this.button_CancelAuthor.UseVisualStyleBackColor = true;
             this.button_CancelAuthor.Visible = false;
             this.button_CancelAuthor.Click += new System.EventHandler(this.button_CancelAuthor_Click);
@@ -388,7 +418,7 @@
             // button_AddAuthor
             // 
             this.button_AddAuthor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_AddAuthor.Location = new System.Drawing.Point(426, 162);
+            this.button_AddAuthor.Location = new System.Drawing.Point(426, 182);
             this.button_AddAuthor.Name = "button_AddAuthor";
             this.button_AddAuthor.Size = new System.Drawing.Size(329, 65);
             this.button_AddAuthor.TabIndex = 73;
@@ -400,7 +430,7 @@
             // 
             this.label_Name.AutoSize = true;
             this.label_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_Name.Location = new System.Drawing.Point(422, 60);
+            this.label_Name.Location = new System.Drawing.Point(422, 80);
             this.label_Name.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label_Name.Name = "label_Name";
             this.label_Name.Size = new System.Drawing.Size(144, 24);
@@ -411,7 +441,7 @@
             // 
             this.textBox_AuthorName.BackColor = System.Drawing.Color.White;
             this.textBox_AuthorName.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_AuthorName.Location = new System.Drawing.Point(426, 91);
+            this.textBox_AuthorName.Location = new System.Drawing.Point(426, 111);
             this.textBox_AuthorName.Margin = new System.Windows.Forms.Padding(6);
             this.textBox_AuthorName.Name = "textBox_AuthorName";
             this.textBox_AuthorName.Size = new System.Drawing.Size(329, 49);
@@ -423,36 +453,38 @@
             this.dataGridView_Author.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_Author.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView_Author.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_Author.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_Author.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_Author.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_Author.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridView_Author.Location = new System.Drawing.Point(32, 25);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_Author.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView_Author.Location = new System.Drawing.Point(32, 80);
             this.dataGridView_Author.Name = "dataGridView_Author";
             this.dataGridView_Author.ReadOnly = true;
             this.dataGridView_Author.RowTemplate.Height = 40;
-            this.dataGridView_Author.Size = new System.Drawing.Size(370, 444);
+            this.dataGridView_Author.Size = new System.Drawing.Size(370, 389);
             this.dataGridView_Author.TabIndex = 71;
             this.dataGridView_Author.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView_Authors_MouseClick);
             // 
             // groupBox_Publishers
             // 
+            this.groupBox_Publishers.Controls.Add(this.button_SearchPublisher);
             this.groupBox_Publishers.Controls.Add(this.button_CancelPublisher);
             this.groupBox_Publishers.Controls.Add(this.label_PhoneNumber);
+            this.groupBox_Publishers.Controls.Add(this.textBox_SearchPublisher);
             this.groupBox_Publishers.Controls.Add(this.textBox_PhoneNumber);
             this.groupBox_Publishers.Controls.Add(this.label_Office);
             this.groupBox_Publishers.Controls.Add(this.textBox_Office);
@@ -466,14 +498,26 @@
             this.groupBox_Publishers.TabIndex = 74;
             this.groupBox_Publishers.TabStop = false;
             // 
+            // button_SearchPublisher
+            // 
+            this.button_SearchPublisher.BackColor = System.Drawing.SystemColors.Control;
+            this.button_SearchPublisher.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_SearchPublisher.BackgroundImage")));
+            this.button_SearchPublisher.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_SearchPublisher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_SearchPublisher.Location = new System.Drawing.Point(487, 25);
+            this.button_SearchPublisher.Name = "button_SearchPublisher";
+            this.button_SearchPublisher.Size = new System.Drawing.Size(44, 40);
+            this.button_SearchPublisher.TabIndex = 82;
+            this.button_SearchPublisher.UseVisualStyleBackColor = false;
+            // 
             // button_CancelPublisher
             // 
             this.button_CancelPublisher.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_CancelPublisher.Location = new System.Drawing.Point(727, 317);
+            this.button_CancelPublisher.Location = new System.Drawing.Point(727, 328);
             this.button_CancelPublisher.Name = "button_CancelPublisher";
             this.button_CancelPublisher.Size = new System.Drawing.Size(118, 65);
             this.button_CancelPublisher.TabIndex = 79;
-            this.button_CancelPublisher.Text = "Cancel Editting";
+            this.button_CancelPublisher.Text = "Cancel Editing";
             this.button_CancelPublisher.UseVisualStyleBackColor = true;
             this.button_CancelPublisher.Visible = false;
             this.button_CancelPublisher.Click += new System.EventHandler(this.button_CancelPublisher_Click);
@@ -482,18 +526,29 @@
             // 
             this.label_PhoneNumber.AutoSize = true;
             this.label_PhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_PhoneNumber.Location = new System.Drawing.Point(555, 229);
+            this.label_PhoneNumber.Location = new System.Drawing.Point(555, 243);
             this.label_PhoneNumber.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label_PhoneNumber.Name = "label_PhoneNumber";
             this.label_PhoneNumber.Size = new System.Drawing.Size(142, 24);
             this.label_PhoneNumber.TabIndex = 80;
             this.label_PhoneNumber.Text = "Phone number:";
             // 
+            // textBox_SearchPublisher
+            // 
+            this.textBox_SearchPublisher.BackColor = System.Drawing.Color.White;
+            this.textBox_SearchPublisher.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_SearchPublisher.Location = new System.Drawing.Point(13, 25);
+            this.textBox_SearchPublisher.Margin = new System.Windows.Forms.Padding(6);
+            this.textBox_SearchPublisher.Name = "textBox_SearchPublisher";
+            this.textBox_SearchPublisher.Size = new System.Drawing.Size(474, 40);
+            this.textBox_SearchPublisher.TabIndex = 81;
+            this.textBox_SearchPublisher.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox_SearchPublisher_KeyUp);
+            // 
             // textBox_PhoneNumber
             // 
             this.textBox_PhoneNumber.BackColor = System.Drawing.Color.White;
             this.textBox_PhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_PhoneNumber.Location = new System.Drawing.Point(555, 259);
+            this.textBox_PhoneNumber.Location = new System.Drawing.Point(555, 273);
             this.textBox_PhoneNumber.Margin = new System.Windows.Forms.Padding(6);
             this.textBox_PhoneNumber.Name = "textBox_PhoneNumber";
             this.textBox_PhoneNumber.Size = new System.Drawing.Size(293, 49);
@@ -503,7 +558,7 @@
             // 
             this.label_Office.AutoSize = true;
             this.label_Office.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_Office.Location = new System.Drawing.Point(555, 134);
+            this.label_Office.Location = new System.Drawing.Point(555, 162);
             this.label_Office.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label_Office.Name = "label_Office";
             this.label_Office.Size = new System.Drawing.Size(135, 24);
@@ -514,7 +569,7 @@
             // 
             this.textBox_Office.BackColor = System.Drawing.Color.White;
             this.textBox_Office.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_Office.Location = new System.Drawing.Point(555, 164);
+            this.textBox_Office.Location = new System.Drawing.Point(555, 192);
             this.textBox_Office.Margin = new System.Windows.Forms.Padding(6);
             this.textBox_Office.Name = "textBox_Office";
             this.textBox_Office.Size = new System.Drawing.Size(293, 49);
@@ -523,7 +578,7 @@
             // button_AddPublisher
             // 
             this.button_AddPublisher.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_AddPublisher.Location = new System.Drawing.Point(552, 317);
+            this.button_AddPublisher.Location = new System.Drawing.Point(552, 328);
             this.button_AddPublisher.Name = "button_AddPublisher";
             this.button_AddPublisher.Size = new System.Drawing.Size(293, 65);
             this.button_AddPublisher.TabIndex = 79;
@@ -535,7 +590,7 @@
             // 
             this.label_PublisherName.AutoSize = true;
             this.label_PublisherName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_PublisherName.Location = new System.Drawing.Point(555, 39);
+            this.label_PublisherName.Location = new System.Drawing.Point(551, 74);
             this.label_PublisherName.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label_PublisherName.Name = "label_PublisherName";
             this.label_PublisherName.Size = new System.Drawing.Size(169, 24);
@@ -546,7 +601,7 @@
             // 
             this.textBox_PublisherName.BackColor = System.Drawing.Color.White;
             this.textBox_PublisherName.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_PublisherName.Location = new System.Drawing.Point(555, 69);
+            this.textBox_PublisherName.Location = new System.Drawing.Point(551, 104);
             this.textBox_PublisherName.Margin = new System.Windows.Forms.Padding(6);
             this.textBox_PublisherName.Name = "textBox_PublisherName";
             this.textBox_PublisherName.Size = new System.Drawing.Size(293, 49);
@@ -557,62 +612,87 @@
             this.dataGridView_Publisher.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_Publisher.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView_Publisher.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_Publisher.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_Publisher.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView_Publisher.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_Publisher.DefaultCellStyle = dataGridViewCellStyle10;
-            this.dataGridView_Publisher.Location = new System.Drawing.Point(13, 28);
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_Publisher.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView_Publisher.Location = new System.Drawing.Point(13, 74);
             this.dataGridView_Publisher.MultiSelect = false;
             this.dataGridView_Publisher.Name = "dataGridView_Publisher";
             this.dataGridView_Publisher.ReadOnly = true;
             this.dataGridView_Publisher.RowTemplate.Height = 40;
-            this.dataGridView_Publisher.Size = new System.Drawing.Size(533, 365);
+            this.dataGridView_Publisher.Size = new System.Drawing.Size(518, 319);
             this.dataGridView_Publisher.TabIndex = 75;
             this.dataGridView_Publisher.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView_Publisher_MouseClick);
             // 
-            // groupBox_Genre
+            // groupBox_Genres
             // 
-            this.groupBox_Genre.Controls.Add(this.button_CancelGenre);
-            this.groupBox_Genre.Controls.Add(this.button_AddGenre);
-            this.groupBox_Genre.Controls.Add(this.label_GenreName);
-            this.groupBox_Genre.Controls.Add(this.textBox_GenreName);
-            this.groupBox_Genre.Controls.Add(this.dataGridView_Genre);
-            this.groupBox_Genre.Location = new System.Drawing.Point(900, 514);
-            this.groupBox_Genre.Name = "groupBox_Genre";
-            this.groupBox_Genre.Size = new System.Drawing.Size(780, 410);
-            this.groupBox_Genre.TabIndex = 74;
-            this.groupBox_Genre.TabStop = false;
+            this.groupBox_Genres.Controls.Add(this.button_SearchGenre);
+            this.groupBox_Genres.Controls.Add(this.button_CancelGenre);
+            this.groupBox_Genres.Controls.Add(this.textBox_SearchGenre);
+            this.groupBox_Genres.Controls.Add(this.button_AddGenre);
+            this.groupBox_Genres.Controls.Add(this.label_GenreName);
+            this.groupBox_Genres.Controls.Add(this.textBox_GenreName);
+            this.groupBox_Genres.Controls.Add(this.dataGridView_Genre);
+            this.groupBox_Genres.Location = new System.Drawing.Point(900, 514);
+            this.groupBox_Genres.Name = "groupBox_Genres";
+            this.groupBox_Genres.Size = new System.Drawing.Size(780, 410);
+            this.groupBox_Genres.TabIndex = 74;
+            this.groupBox_Genres.TabStop = false;
+            // 
+            // button_SearchGenre
+            // 
+            this.button_SearchGenre.BackColor = System.Drawing.SystemColors.Control;
+            this.button_SearchGenre.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_SearchGenre.BackgroundImage")));
+            this.button_SearchGenre.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_SearchGenre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_SearchGenre.Location = new System.Drawing.Point(358, 31);
+            this.button_SearchGenre.Name = "button_SearchGenre";
+            this.button_SearchGenre.Size = new System.Drawing.Size(44, 40);
+            this.button_SearchGenre.TabIndex = 82;
+            this.button_SearchGenre.UseVisualStyleBackColor = false;
             // 
             // button_CancelGenre
             // 
             this.button_CancelGenre.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_CancelGenre.Location = new System.Drawing.Point(637, 162);
+            this.button_CancelGenre.Location = new System.Drawing.Point(637, 182);
             this.button_CancelGenre.Name = "button_CancelGenre";
             this.button_CancelGenre.Size = new System.Drawing.Size(118, 65);
             this.button_CancelGenre.TabIndex = 81;
-            this.button_CancelGenre.Text = "Cancel Editting";
+            this.button_CancelGenre.Text = "Cancel Editing";
             this.button_CancelGenre.UseVisualStyleBackColor = true;
             this.button_CancelGenre.Visible = false;
             this.button_CancelGenre.Click += new System.EventHandler(this.button_CancelGenre_Click);
             // 
+            // textBox_SearchGenre
+            // 
+            this.textBox_SearchGenre.BackColor = System.Drawing.Color.White;
+            this.textBox_SearchGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_SearchGenre.Location = new System.Drawing.Point(32, 31);
+            this.textBox_SearchGenre.Margin = new System.Windows.Forms.Padding(6);
+            this.textBox_SearchGenre.Name = "textBox_SearchGenre";
+            this.textBox_SearchGenre.Size = new System.Drawing.Size(326, 40);
+            this.textBox_SearchGenre.TabIndex = 81;
+            this.textBox_SearchGenre.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox_SearchGenre_KeyUp);
+            // 
             // button_AddGenre
             // 
             this.button_AddGenre.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_AddGenre.Location = new System.Drawing.Point(426, 162);
+            this.button_AddGenre.Location = new System.Drawing.Point(426, 182);
             this.button_AddGenre.Name = "button_AddGenre";
             this.button_AddGenre.Size = new System.Drawing.Size(329, 65);
             this.button_AddGenre.TabIndex = 73;
@@ -624,7 +704,7 @@
             // 
             this.label_GenreName.AutoSize = true;
             this.label_GenreName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_GenreName.Location = new System.Drawing.Point(422, 60);
+            this.label_GenreName.Location = new System.Drawing.Point(422, 80);
             this.label_GenreName.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label_GenreName.Name = "label_GenreName";
             this.label_GenreName.Size = new System.Drawing.Size(141, 24);
@@ -635,7 +715,7 @@
             // 
             this.textBox_GenreName.BackColor = System.Drawing.Color.White;
             this.textBox_GenreName.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_GenreName.Location = new System.Drawing.Point(426, 91);
+            this.textBox_GenreName.Location = new System.Drawing.Point(426, 111);
             this.textBox_GenreName.Margin = new System.Windows.Forms.Padding(6);
             this.textBox_GenreName.Name = "textBox_GenreName";
             this.textBox_GenreName.Size = new System.Drawing.Size(329, 49);
@@ -647,30 +727,30 @@
             this.dataGridView_Genre.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_Genre.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView_Genre.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_Genre.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_Genre.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView_Genre.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_Genre.DefaultCellStyle = dataGridViewCellStyle12;
-            this.dataGridView_Genre.Location = new System.Drawing.Point(32, 25);
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_Genre.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridView_Genre.Location = new System.Drawing.Point(32, 80);
             this.dataGridView_Genre.MultiSelect = false;
             this.dataGridView_Genre.Name = "dataGridView_Genre";
             this.dataGridView_Genre.ReadOnly = true;
             this.dataGridView_Genre.RowTemplate.Height = 40;
-            this.dataGridView_Genre.Size = new System.Drawing.Size(370, 368);
+            this.dataGridView_Genre.Size = new System.Drawing.Size(370, 313);
             this.dataGridView_Genre.TabIndex = 71;
             this.dataGridView_Genre.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView_Genre_MouseClick);
             // 
@@ -681,7 +761,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1757, 936);
-            this.Controls.Add(this.groupBox_Genre);
+            this.Controls.Add(this.groupBox_Genres);
             this.Controls.Add(this.groupBox_Publishers);
             this.Controls.Add(this.groupBox_Authors);
             this.Controls.Add(this.groupBox_Books);
@@ -701,8 +781,8 @@
             this.groupBox_Publishers.ResumeLayout(false);
             this.groupBox_Publishers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Publisher)).EndInit();
-            this.groupBox_Genre.ResumeLayout(false);
-            this.groupBox_Genre.PerformLayout();
+            this.groupBox_Genres.ResumeLayout(false);
+            this.groupBox_Genres.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Genre)).EndInit();
             this.ResumeLayout(false);
 
@@ -741,7 +821,7 @@
         private System.Windows.Forms.TextBox textBox_PhoneNumber;
         private System.Windows.Forms.Label label_Office;
         private System.Windows.Forms.TextBox textBox_Office;
-        private System.Windows.Forms.GroupBox groupBox_Genre;
+        private System.Windows.Forms.GroupBox groupBox_Genres;
         private System.Windows.Forms.Button button_AddGenre;
         private System.Windows.Forms.Label label_GenreName;
         private System.Windows.Forms.TextBox textBox_GenreName;
@@ -751,5 +831,11 @@
         private System.Windows.Forms.Button button_CancelAuthor;
         private System.Windows.Forms.Button button_CancelPublisher;
         private System.Windows.Forms.Button button_CancelGenre;
+        private System.Windows.Forms.TextBox textBox_SearchAuthor;
+        private System.Windows.Forms.Button button_SearchAuthor;
+        private System.Windows.Forms.Button button_SearchPublisher;
+        private System.Windows.Forms.TextBox textBox_SearchPublisher;
+        private System.Windows.Forms.Button button_SearchGenre;
+        private System.Windows.Forms.TextBox textBox_SearchGenre;
     }
 }

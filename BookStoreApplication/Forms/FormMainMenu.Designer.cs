@@ -187,9 +187,9 @@ namespace BookStoreApplication
             this.button_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Close.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button_Close.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(214)))), ((int)(((byte)(195)))));
-            this.button_Close.Location = new System.Drawing.Point(25, 12);
+            this.button_Close.Location = new System.Drawing.Point(26, 22);
             this.button_Close.Name = "button_Close";
-            this.button_Close.Size = new System.Drawing.Size(60, 60);
+            this.button_Close.Size = new System.Drawing.Size(40, 40);
             this.button_Close.TabIndex = 0;
             this.button_Close.UseVisualStyleBackColor = true;
             this.button_Close.Click += new System.EventHandler(this.button_Close_Click);
@@ -199,7 +199,7 @@ namespace BookStoreApplication
             this.label_Title.AutoSize = true;
             this.label_Title.Font = new System.Drawing.Font("Century", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label_Title.ForeColor = System.Drawing.Color.White;
-            this.label_Title.Location = new System.Drawing.Point(113, 28);
+            this.label_Title.Location = new System.Drawing.Point(100, 28);
             this.label_Title.Name = "label_Title";
             this.label_Title.Size = new System.Drawing.Size(84, 27);
             this.label_Title.TabIndex = 0;

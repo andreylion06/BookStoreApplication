@@ -29,29 +29,32 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProducts));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.textBox_Search = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label_All = new System.Windows.Forms.Label();
+            this.checkBox_All = new System.Windows.Forms.CheckBox();
+            this.button_Search = new System.Windows.Forms.Button();
             this.groupBox_Basket = new System.Windows.Forms.GroupBox();
             this.groupBox_Total = new System.Windows.Forms.GroupBox();
             this.label_Total = new System.Windows.Forms.Label();
             this.label_hrn = new System.Windows.Forms.Label();
             this.groupBox_AddingInBasket = new System.Windows.Forms.GroupBox();
-            this.textBox_Title = new System.Windows.Forms.TextBox();
+            this.label_InBasket = new System.Windows.Forms.Label();
+            this.label_Quantity = new System.Windows.Forms.Label();
+            this.label_Year = new System.Windows.Forms.Label();
             this.numericUpDown_Quantity = new System.Windows.Forms.NumericUpDown();
             this.button_AddToBasket = new System.Windows.Forms.Button();
-            this.dataGridView_Products = new System.Windows.Forms.DataGridView();
-            this.label_Title = new System.Windows.Forms.Label();
+            this.textBox_Year = new System.Windows.Forms.TextBox();
             this.label_AuthorName = new System.Windows.Forms.Label();
             this.textBox_AuthorName = new System.Windows.Forms.TextBox();
-            this.label_Year = new System.Windows.Forms.Label();
-            this.textBox_Year = new System.Windows.Forms.TextBox();
-            this.label_Quantity = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.label_Title = new System.Windows.Forms.Label();
+            this.textBox_Title = new System.Windows.Forms.TextBox();
+            this.dataGridView_Products = new System.Windows.Forms.DataGridView();
+            this.panel3.SuspendLayout();
             this.groupBox_Basket.SuspendLayout();
             this.groupBox_Total.SuspendLayout();
             this.groupBox_AddingInBasket.SuspendLayout();
@@ -64,40 +67,64 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1115, 23);
-            this.panel1.TabIndex = 9;
-            // 
-            // panel2
-            // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1115, 23);
-            this.panel2.TabIndex = 10;
-            // 
             // textBox_Search
             // 
-            this.textBox_Search.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox_Search.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_Search.Location = new System.Drawing.Point(0, 23);
+            this.textBox_Search.Location = new System.Drawing.Point(12, 24);
             this.textBox_Search.Name = "textBox_Search";
-            this.textBox_Search.Size = new System.Drawing.Size(1115, 47);
+            this.textBox_Search.Size = new System.Drawing.Size(1019, 47);
             this.textBox_Search.TabIndex = 10;
             this.textBox_Search.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox_Search_KeyUp);
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.label_All);
+            this.panel3.Controls.Add(this.checkBox_All);
+            this.panel3.Controls.Add(this.button_Search);
+            this.panel3.Controls.Add(this.textBox_Search);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 70);
+            this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1115, 23);
+            this.panel3.Size = new System.Drawing.Size(1115, 99);
             this.panel3.TabIndex = 11;
+            // 
+            // label_All
+            // 
+            this.label_All.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_All.AutoSize = true;
+            this.label_All.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_All.Location = new System.Drawing.Point(1055, 73);
+            this.label_All.Name = "label_All";
+            this.label_All.Size = new System.Drawing.Size(22, 18);
+            this.label_All.TabIndex = 84;
+            this.label_All.Text = "all";
+            // 
+            // checkBox_All
+            // 
+            this.checkBox_All.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBox_All.AutoSize = true;
+            this.checkBox_All.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBox_All.Location = new System.Drawing.Point(1040, 77);
+            this.checkBox_All.Name = "checkBox_All";
+            this.checkBox_All.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_All.TabIndex = 83;
+            this.checkBox_All.UseVisualStyleBackColor = true;
+            this.checkBox_All.CheckedChanged += new System.EventHandler(this.checkBox_All_CheckedChanged);
+            // 
+            // button_Search
+            // 
+            this.button_Search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_Search.BackColor = System.Drawing.SystemColors.Control;
+            this.button_Search.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_Search.BackgroundImage")));
+            this.button_Search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_Search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Search.Location = new System.Drawing.Point(1030, 24);
+            this.button_Search.Name = "button_Search";
+            this.button_Search.Size = new System.Drawing.Size(49, 47);
+            this.button_Search.TabIndex = 81;
+            this.button_Search.UseVisualStyleBackColor = false;
             // 
             // groupBox_Basket
             // 
@@ -147,6 +174,7 @@
             // 
             // groupBox_AddingInBasket
             // 
+            this.groupBox_AddingInBasket.Controls.Add(this.label_InBasket);
             this.groupBox_AddingInBasket.Controls.Add(this.label_Quantity);
             this.groupBox_AddingInBasket.Controls.Add(this.label_Year);
             this.groupBox_AddingInBasket.Controls.Add(this.numericUpDown_Quantity);
@@ -159,38 +187,49 @@
             this.groupBox_AddingInBasket.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox_AddingInBasket.Location = new System.Drawing.Point(37, 19);
             this.groupBox_AddingInBasket.Name = "groupBox_AddingInBasket";
-            this.groupBox_AddingInBasket.Size = new System.Drawing.Size(575, 145);
+            this.groupBox_AddingInBasket.Size = new System.Drawing.Size(575, 163);
             this.groupBox_AddingInBasket.TabIndex = 5;
             this.groupBox_AddingInBasket.TabStop = false;
             this.groupBox_AddingInBasket.Text = "Adding to basket";
             // 
-            // textBox_Title
+            // label_InBasket
             // 
-            this.textBox_Title.Enabled = false;
-            this.textBox_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_Title.Location = new System.Drawing.Point(21, 42);
-            this.textBox_Title.Name = "textBox_Title";
-            this.textBox_Title.Size = new System.Drawing.Size(215, 35);
-            this.textBox_Title.TabIndex = 2;
+            this.label_InBasket.AutoSize = true;
+            this.label_InBasket.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_InBasket.Location = new System.Drawing.Point(343, 134);
+            this.label_InBasket.Name = "label_InBasket";
+            this.label_InBasket.Size = new System.Drawing.Size(64, 13);
+            this.label_InBasket.TabIndex = 10;
+            this.label_InBasket.Text = "(x in basket)";
+            // 
+            // label_Quantity
+            // 
+            this.label_Quantity.AutoSize = true;
+            this.label_Quantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_Quantity.Location = new System.Drawing.Point(239, 79);
+            this.label_Quantity.Name = "label_Quantity";
+            this.label_Quantity.Size = new System.Drawing.Size(49, 13);
+            this.label_Quantity.TabIndex = 9;
+            this.label_Quantity.Text = "Quantity:";
+            // 
+            // label_Year
+            // 
+            this.label_Year.AutoSize = true;
+            this.label_Year.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_Year.Location = new System.Drawing.Point(239, 26);
+            this.label_Year.Name = "label_Year";
+            this.label_Year.Size = new System.Drawing.Size(71, 13);
+            this.label_Year.TabIndex = 8;
+            this.label_Year.Text = "Year of issue:";
             // 
             // numericUpDown_Quantity
             // 
             this.numericUpDown_Quantity.Enabled = false;
             this.numericUpDown_Quantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.numericUpDown_Quantity.Location = new System.Drawing.Point(253, 93);
-            this.numericUpDown_Quantity.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.numericUpDown_Quantity.Name = "numericUpDown_Quantity";
             this.numericUpDown_Quantity.Size = new System.Drawing.Size(128, 38);
             this.numericUpDown_Quantity.TabIndex = 1;
-            this.numericUpDown_Quantity.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // button_AddToBasket
             // 
@@ -203,50 +242,14 @@
             this.button_AddToBasket.UseVisualStyleBackColor = true;
             this.button_AddToBasket.Click += new System.EventHandler(this.button_AddToBasket_Click);
             // 
-            // dataGridView_Products
+            // textBox_Year
             // 
-            this.dataGridView_Products.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView_Products.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView_Products.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView_Products.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_Products.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
-            this.dataGridView_Products.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_Products.DefaultCellStyle = dataGridViewCellStyle14;
-            this.dataGridView_Products.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView_Products.Location = new System.Drawing.Point(0, 93);
-            this.dataGridView_Products.MultiSelect = false;
-            this.dataGridView_Products.Name = "dataGridView_Products";
-            this.dataGridView_Products.ReadOnly = true;
-            this.dataGridView_Products.RowTemplate.Height = 40;
-            this.dataGridView_Products.Size = new System.Drawing.Size(1115, 319);
-            this.dataGridView_Products.TabIndex = 16;
-            this.dataGridView_Products.DoubleClick += new System.EventHandler(this.dataGridView_Products_DoubleClick);
-            this.dataGridView_Products.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView_Products_MouseClick);
-            // 
-            // label_Title
-            // 
-            this.label_Title.AutoSize = true;
-            this.label_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_Title.Location = new System.Drawing.Point(7, 26);
-            this.label_Title.Name = "label_Title";
-            this.label_Title.Size = new System.Drawing.Size(30, 13);
-            this.label_Title.TabIndex = 4;
-            this.label_Title.Text = "Title:";
+            this.textBox_Year.Enabled = false;
+            this.textBox_Year.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_Year.Location = new System.Drawing.Point(253, 42);
+            this.textBox_Year.Name = "textBox_Year";
+            this.textBox_Year.Size = new System.Drawing.Size(128, 35);
+            this.textBox_Year.TabIndex = 7;
             // 
             // label_AuthorName
             // 
@@ -267,34 +270,61 @@
             this.textBox_AuthorName.Size = new System.Drawing.Size(215, 35);
             this.textBox_AuthorName.TabIndex = 5;
             // 
-            // label_Year
+            // label_Title
             // 
-            this.label_Year.AutoSize = true;
-            this.label_Year.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_Year.Location = new System.Drawing.Point(239, 26);
-            this.label_Year.Name = "label_Year";
-            this.label_Year.Size = new System.Drawing.Size(71, 13);
-            this.label_Year.TabIndex = 8;
-            this.label_Year.Text = "Year of issue:";
+            this.label_Title.AutoSize = true;
+            this.label_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_Title.Location = new System.Drawing.Point(7, 26);
+            this.label_Title.Name = "label_Title";
+            this.label_Title.Size = new System.Drawing.Size(30, 13);
+            this.label_Title.TabIndex = 4;
+            this.label_Title.Text = "Title:";
             // 
-            // textBox_Year
+            // textBox_Title
             // 
-            this.textBox_Year.Enabled = false;
-            this.textBox_Year.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_Year.Location = new System.Drawing.Point(253, 42);
-            this.textBox_Year.Name = "textBox_Year";
-            this.textBox_Year.Size = new System.Drawing.Size(128, 35);
-            this.textBox_Year.TabIndex = 7;
+            this.textBox_Title.Enabled = false;
+            this.textBox_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_Title.Location = new System.Drawing.Point(21, 42);
+            this.textBox_Title.Name = "textBox_Title";
+            this.textBox_Title.Size = new System.Drawing.Size(215, 35);
+            this.textBox_Title.TabIndex = 2;
             // 
-            // label_Quantity
+            // dataGridView_Products
             // 
-            this.label_Quantity.AutoSize = true;
-            this.label_Quantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_Quantity.Location = new System.Drawing.Point(239, 79);
-            this.label_Quantity.Name = "label_Quantity";
-            this.label_Quantity.Size = new System.Drawing.Size(71, 13);
-            this.label_Quantity.TabIndex = 9;
-            this.label_Quantity.Text = "Year of issue:";
+            this.dataGridView_Products.AllowUserToAddRows = false;
+            this.dataGridView_Products.AllowUserToDeleteRows = false;
+            this.dataGridView_Products.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView_Products.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView_Products.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView_Products.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_Products.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView_Products.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_Products.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView_Products.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView_Products.Location = new System.Drawing.Point(0, 99);
+            this.dataGridView_Products.MultiSelect = false;
+            this.dataGridView_Products.Name = "dataGridView_Products";
+            this.dataGridView_Products.ReadOnly = true;
+            this.dataGridView_Products.RowTemplate.Height = 40;
+            this.dataGridView_Products.Size = new System.Drawing.Size(1115, 313);
+            this.dataGridView_Products.TabIndex = 17;
+            this.dataGridView_Products.DoubleClick += new System.EventHandler(this.dataGridView_Products_DoubleClick);
+            this.dataGridView_Products.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView_Products_MouseClick);
             // 
             // FormProducts
             // 
@@ -304,13 +334,12 @@
             this.Controls.Add(this.dataGridView_Products);
             this.Controls.Add(this.groupBox_Basket);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.textBox_Search);
-            this.Controls.Add(this.panel1);
             this.MinimumSize = new System.Drawing.Size(800, 400);
             this.Name = "FormProducts";
             this.Text = "FormProducts";
             this.Load += new System.EventHandler(this.FormProducts_Load);
-            this.panel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.groupBox_Basket.ResumeLayout(false);
             this.groupBox_Total.ResumeLayout(false);
             this.groupBox_Total.PerformLayout();
@@ -319,18 +348,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Quantity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Products)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBox_Search;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.GroupBox groupBox_Basket;
-        private System.Windows.Forms.DataGridView dataGridView_Products;
         private System.Windows.Forms.TextBox textBox_Title;
         private System.Windows.Forms.NumericUpDown numericUpDown_Quantity;
         private System.Windows.Forms.Button button_AddToBasket;
@@ -344,5 +369,10 @@
         private System.Windows.Forms.TextBox textBox_Year;
         private System.Windows.Forms.Label label_AuthorName;
         private System.Windows.Forms.TextBox textBox_AuthorName;
+        private System.Windows.Forms.Label label_InBasket;
+        private System.Windows.Forms.DataGridView dataGridView_Products;
+        private System.Windows.Forms.Button button_Search;
+        private System.Windows.Forms.CheckBox checkBox_All;
+        private System.Windows.Forms.Label label_All;
     }
 }

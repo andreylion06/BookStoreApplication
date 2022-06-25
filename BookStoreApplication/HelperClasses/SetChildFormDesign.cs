@@ -54,6 +54,11 @@ namespace BookStoreApplication
                     groupBox.ForeColor = ThemeColor.ChangeColorBrightness(ThemeColor.PrimaryColor, -0.5);
                     LoadTheme(groupBox);
                 }
+                else if (cntrls.GetType() == typeof(Panel))
+                {
+                    Panel panel = (Panel)cntrls;
+                    LoadTheme(panel);
+                }
             }
         }
 
