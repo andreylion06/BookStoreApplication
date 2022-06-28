@@ -26,7 +26,6 @@ namespace BookStoreApplication.Forms
         private void FormBasket_Load(object sender, EventArgs e)
         {
             LoadDataGridViewBasket();
-            LoadBasketTextBox();
             SetLabelTotal();
             SetChildFormDesign.LoadTheme(this);
         }
@@ -54,6 +53,7 @@ namespace BookStoreApplication.Forms
             using (BookStoreDB db = new BookStoreDB())
             {
                 var basket = db.Basket.ToList();
+                if (basket.Count == 0) return;
                 foreach (var item in basket)
                 {
                     var book = db.Book.SingleOrDefault(x => x.ID == item.BookID);
@@ -62,22 +62,6 @@ namespace BookStoreApplication.Forms
                 }
             }
             dataGridView_Basket.Sort(this.dataGridView_Basket.Columns["ID"], ListSortDirection.Ascending);
-        }
-
-        public void LoadBasketTextBox()
-        {
-            //string text = "";
-            //using (BookStoreDB db = new BookStoreDB())
-            //{
-            //    var basket = db.Basket.ToList();
-            //    foreach (var item in basket)
-            //    {
-            //        var book = db.Book.SingleOrDefault(x => x.ID == item.BookID);
-            //        var author = db.Author.SingleOrDefault(x => x.ID == book.AuthorID);
-            //        text += $"{book.Title}  , {author.FullName}  , {book.YearOfIssue}  , {book.Price}hrn   x{item.Count}   =   {book.Price * item.Count}hrn" + Environment.NewLine;
-            //    }
-            //}
-            //textBox_Basket.Text = text;
         }
 
         private void dataGridView_Basket_DoubleClick(object sender, EventArgs e)
@@ -146,27 +130,42 @@ namespace BookStoreApplication.Forms
         {
             using (BookStoreDB db = new BookStoreDB())
             {
-                DateTime now = DateTime.Now;
                 var basket = db.Basket.ToList();
-                foreach (var item in basket)
+                if (basket.Count > 0)
                 {
-                    Book book = db.Book.SingleOrDefault(x => x.ID == item.BookID);
-                    book.QuantityInStock -= item.Count;
-                    db.Entry(book).State = System.Data.Entity.EntityState.Modified;
-                    Sales sale = new Sales()
+                    string message = "";
+                    DateTime now = DateTime.Now;
+                    foreach (var item in basket)
                     {
-                        BookID = item.BookID,
-                        DateOfSale = now,
-                        Count = item.Count
-                    };
-                    db.Sales.Add(sale);
+                        var book = db.Book.SingleOrDefault(x => x.ID == item.BookID);
+
+                        var author = db.Author.SingleOrDefault(x => x.ID == book.AuthorID);
+                        message += $"{book.Title}  , {author.FullName}  , {book.YearOfIssue}  " +
+                            $", {book.Price}hrn   x{item.Count}   =   {book.Price * item.Count}hrn" 
+                            + Environment.NewLine;
+
+                        book.QuantityInStock -= item.Count;
+                        db.Entry(book).State = System.Data.Entity.EntityState.Modified;
+                        Sales sale = new Sales()
+                        {
+                            BookID = item.BookID,
+                            DateOfSale = now,
+                            Count = item.Count
+                        };
+                        db.Sales.Add(sale);
+                        db.SaveChanges();
+
+                    }
+                    db.Database.ExecuteSqlCommand("TRUNCATE TABLE [Baskets]");
                     db.SaveChanges();
+                    dataGridView_Basket.Rows.Clear();
+                    label_Total.Text = "0";
+                    MessageBox.Show(message, "The sale was successful",
+                    MessageBoxButtons.OK);
                 }
-                db.Database.ExecuteSqlCommand("TRUNCATE TABLE [Baskets]");
-                db.SaveChanges();
+                else MessageBox.Show("Basket is empty.", "Information",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            dataGridView_Basket.Rows.Clear();
-            label_Total.Text = "0";
         }
     }
 }

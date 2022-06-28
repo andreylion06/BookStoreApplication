@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProducts));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.textBox_Search = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel = new System.Windows.Forms.Panel();
             this.label_All = new System.Windows.Forms.Label();
             this.checkBox_All = new System.Windows.Forms.CheckBox();
             this.button_Search = new System.Windows.Forms.Button();
@@ -45,16 +45,16 @@
             this.groupBox_AddingInBasket = new System.Windows.Forms.GroupBox();
             this.label_InBasket = new System.Windows.Forms.Label();
             this.label_Quantity = new System.Windows.Forms.Label();
-            this.label_Year = new System.Windows.Forms.Label();
+            this.label_Price = new System.Windows.Forms.Label();
             this.numericUpDown_Quantity = new System.Windows.Forms.NumericUpDown();
             this.button_AddToBasket = new System.Windows.Forms.Button();
-            this.textBox_Year = new System.Windows.Forms.TextBox();
+            this.textBox_Price = new System.Windows.Forms.TextBox();
             this.label_AuthorName = new System.Windows.Forms.Label();
             this.textBox_AuthorName = new System.Windows.Forms.TextBox();
             this.label_Title = new System.Windows.Forms.Label();
             this.textBox_Title = new System.Windows.Forms.TextBox();
             this.dataGridView_Products = new System.Windows.Forms.DataGridView();
-            this.panel3.SuspendLayout();
+            this.panel.SuspendLayout();
             this.groupBox_Basket.SuspendLayout();
             this.groupBox_Total.SuspendLayout();
             this.groupBox_AddingInBasket.SuspendLayout();
@@ -78,17 +78,17 @@
             this.textBox_Search.TabIndex = 10;
             this.textBox_Search.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox_Search_KeyUp);
             // 
-            // panel3
+            // panel
             // 
-            this.panel3.Controls.Add(this.label_All);
-            this.panel3.Controls.Add(this.checkBox_All);
-            this.panel3.Controls.Add(this.button_Search);
-            this.panel3.Controls.Add(this.textBox_Search);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1115, 99);
-            this.panel3.TabIndex = 11;
+            this.panel.Controls.Add(this.label_All);
+            this.panel.Controls.Add(this.checkBox_All);
+            this.panel.Controls.Add(this.button_Search);
+            this.panel.Controls.Add(this.textBox_Search);
+            this.panel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel.Location = new System.Drawing.Point(0, 0);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(1115, 100);
+            this.panel.TabIndex = 11;
             // 
             // label_All
             // 
@@ -155,10 +155,10 @@
             // label_Total
             // 
             this.label_Total.AutoSize = true;
-            this.label_Total.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_Total.Location = new System.Drawing.Point(13, 52);
+            this.label_Total.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_Total.Location = new System.Drawing.Point(27, 55);
             this.label_Total.Name = "label_Total";
-            this.label_Total.Size = new System.Drawing.Size(159, 55);
+            this.label_Total.Size = new System.Drawing.Size(123, 42);
             this.label_Total.TabIndex = 78;
             this.label_Total.Text = "00000";
             // 
@@ -166,7 +166,7 @@
             // 
             this.label_hrn.AutoSize = true;
             this.label_hrn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_hrn.Location = new System.Drawing.Point(171, 83);
+            this.label_hrn.Location = new System.Drawing.Point(156, 79);
             this.label_hrn.Name = "label_hrn";
             this.label_hrn.Size = new System.Drawing.Size(43, 24);
             this.label_hrn.TabIndex = 77;
@@ -176,10 +176,10 @@
             // 
             this.groupBox_AddingInBasket.Controls.Add(this.label_InBasket);
             this.groupBox_AddingInBasket.Controls.Add(this.label_Quantity);
-            this.groupBox_AddingInBasket.Controls.Add(this.label_Year);
+            this.groupBox_AddingInBasket.Controls.Add(this.label_Price);
             this.groupBox_AddingInBasket.Controls.Add(this.numericUpDown_Quantity);
             this.groupBox_AddingInBasket.Controls.Add(this.button_AddToBasket);
-            this.groupBox_AddingInBasket.Controls.Add(this.textBox_Year);
+            this.groupBox_AddingInBasket.Controls.Add(this.textBox_Price);
             this.groupBox_AddingInBasket.Controls.Add(this.label_AuthorName);
             this.groupBox_AddingInBasket.Controls.Add(this.textBox_AuthorName);
             this.groupBox_AddingInBasket.Controls.Add(this.label_Title);
@@ -212,15 +212,15 @@
             this.label_Quantity.TabIndex = 9;
             this.label_Quantity.Text = "Quantity:";
             // 
-            // label_Year
+            // label_Price
             // 
-            this.label_Year.AutoSize = true;
-            this.label_Year.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_Year.Location = new System.Drawing.Point(239, 26);
-            this.label_Year.Name = "label_Year";
-            this.label_Year.Size = new System.Drawing.Size(71, 13);
-            this.label_Year.TabIndex = 8;
-            this.label_Year.Text = "Year of issue:";
+            this.label_Price.AutoSize = true;
+            this.label_Price.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_Price.Location = new System.Drawing.Point(239, 26);
+            this.label_Price.Name = "label_Price";
+            this.label_Price.Size = new System.Drawing.Size(34, 13);
+            this.label_Price.TabIndex = 8;
+            this.label_Price.Text = "Price:";
             // 
             // numericUpDown_Quantity
             // 
@@ -242,14 +242,14 @@
             this.button_AddToBasket.UseVisualStyleBackColor = true;
             this.button_AddToBasket.Click += new System.EventHandler(this.button_AddToBasket_Click);
             // 
-            // textBox_Year
+            // textBox_Price
             // 
-            this.textBox_Year.Enabled = false;
-            this.textBox_Year.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_Year.Location = new System.Drawing.Point(253, 42);
-            this.textBox_Year.Name = "textBox_Year";
-            this.textBox_Year.Size = new System.Drawing.Size(128, 35);
-            this.textBox_Year.TabIndex = 7;
+            this.textBox_Price.Enabled = false;
+            this.textBox_Price.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_Price.Location = new System.Drawing.Point(253, 42);
+            this.textBox_Price.Name = "textBox_Price";
+            this.textBox_Price.Size = new System.Drawing.Size(128, 35);
+            this.textBox_Price.TabIndex = 7;
             // 
             // label_AuthorName
             // 
@@ -297,31 +297,31 @@
             this.dataGridView_Products.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView_Products.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView_Products.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_Products.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_Products.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridView_Products.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_Products.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_Products.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridView_Products.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView_Products.Location = new System.Drawing.Point(0, 99);
+            this.dataGridView_Products.Location = new System.Drawing.Point(0, 100);
             this.dataGridView_Products.MultiSelect = false;
             this.dataGridView_Products.Name = "dataGridView_Products";
             this.dataGridView_Products.ReadOnly = true;
             this.dataGridView_Products.RowTemplate.Height = 40;
-            this.dataGridView_Products.Size = new System.Drawing.Size(1115, 313);
+            this.dataGridView_Products.Size = new System.Drawing.Size(1115, 312);
             this.dataGridView_Products.TabIndex = 17;
             this.dataGridView_Products.DoubleClick += new System.EventHandler(this.dataGridView_Products_DoubleClick);
             this.dataGridView_Products.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView_Products_MouseClick);
@@ -333,13 +333,13 @@
             this.ClientSize = new System.Drawing.Size(1115, 606);
             this.Controls.Add(this.dataGridView_Products);
             this.Controls.Add(this.groupBox_Basket);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel);
             this.MinimumSize = new System.Drawing.Size(800, 400);
             this.Name = "FormProducts";
             this.Text = "FormProducts";
             this.Load += new System.EventHandler(this.FormProducts_Load);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.panel.ResumeLayout(false);
+            this.panel.PerformLayout();
             this.groupBox_Basket.ResumeLayout(false);
             this.groupBox_Total.ResumeLayout(false);
             this.groupBox_Total.PerformLayout();
@@ -354,7 +354,7 @@
         #endregion
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.TextBox textBox_Search;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel;
         private System.Windows.Forms.GroupBox groupBox_Basket;
         private System.Windows.Forms.TextBox textBox_Title;
         private System.Windows.Forms.NumericUpDown numericUpDown_Quantity;
@@ -365,8 +365,8 @@
         private System.Windows.Forms.Label label_Total;
         private System.Windows.Forms.Label label_Title;
         private System.Windows.Forms.Label label_Quantity;
-        private System.Windows.Forms.Label label_Year;
-        private System.Windows.Forms.TextBox textBox_Year;
+        private System.Windows.Forms.Label label_Price;
+        private System.Windows.Forms.TextBox textBox_Price;
         private System.Windows.Forms.Label label_AuthorName;
         private System.Windows.Forms.TextBox textBox_AuthorName;
         private System.Windows.Forms.Label label_InBasket;

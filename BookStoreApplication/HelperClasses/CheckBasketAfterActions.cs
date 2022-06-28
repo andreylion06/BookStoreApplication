@@ -25,7 +25,7 @@ namespace BookStoreApplication.HelperClasses
                             basket.Count = book.QuantityInStock;
                             db.Entry(basket).State = System.Data.Entity.EntityState.Modified;
                             db.SaveChanges();
-                            MessageBox.Show("The book you changed was in the basket, the quantity has been changed", 
+                            MessageBox.Show("The book you changed was in the basket, the quantity has been changed.", 
                                 "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }

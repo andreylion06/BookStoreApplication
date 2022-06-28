@@ -10,23 +10,6 @@ namespace BookStoreApplication
 {
     public class ContextMenuGenerator
     {
-        //public static ContextMenu GenerateContextMenu(DataGridView dataGrid, MouseEventArgs e, bool withDeleteButton = true, bool withAddButton = true)
-        //{
-        //    int currentMouseOverRow = dataGrid.HitTest(e.X, e.Y).RowIndex;
-        //    if (currentMouseOverRow != -1)
-        //    {
-        //        dataGrid.ClearSelection();
-        //        dataGrid.Rows[currentMouseOverRow].Selected = true;
-
-        //        ContextMenu m = new ContextMenu();
-        //        m.MenuItems.Add(new MenuItem("Edit selected item"));
-        //        if (withDeleteButton) m.MenuItems.Add(new MenuItem("Delete selected item"));
-        //        if (withAddButton) m.MenuItems.Add(new MenuItem("Add new item"));
-        //        m.Show(dataGrid, new Point(e.X, e.Y));
-        //        return m;
-        //    }
-        //    return null;
-        //}
         public static ContextMenu GenerateContextMenu(DataGridView dataGrid, MouseEventArgs e, List<string> options)
         {
             int currentMouseOverRow = dataGrid.HitTest(e.X, e.Y).RowIndex;

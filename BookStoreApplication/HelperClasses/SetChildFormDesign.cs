@@ -18,7 +18,7 @@ namespace BookStoreApplication
                 {
                     Button btn = (Button)cntrls;
                     btn.BackColor = ThemeColor.PrimaryColor;
-                    btn.ForeColor = Color.Gainsboro;
+                    btn.ForeColor = Color.White;
                     btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
                 }
                 else if (cntrls.GetType() == typeof(Label))
@@ -60,6 +60,11 @@ namespace BookStoreApplication
                     LoadTheme(panel);
                 }
             }
+        }
+
+        public static void SetLastDataGridRowColor(DataGridView dataGrid)
+        {
+            dataGrid.Rows[dataGrid.Rows.Count - 1].DefaultCellStyle.BackColor = ThemeColor.ChangeColorBrightness(ThemeColor.PrimaryColor, 0.9);
         }
 
     }

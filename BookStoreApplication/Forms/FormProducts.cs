@@ -18,8 +18,6 @@ namespace BookStoreApplication.Forms
 {
     public partial class FormProducts : Form
     {
-        // After deleting and updating book check basket
-        // After clicking item where count == 0 numeric value = 0
         public FormProducts()
         {
             InitializeComponent();
@@ -63,6 +61,7 @@ namespace BookStoreApplication.Forms
             using (BookStoreDB db = new BookStoreDB())
             {
                 var books = db.Book.ToList();
+                if (books.Count == 0) return;
                 foreach (var book in books)
                 {
                     if ((book.QuantityInStock == 0 && all == false)
@@ -74,9 +73,11 @@ namespace BookStoreApplication.Forms
                         publisher.Name, book.YearOfIssue, book.NumberOfPages, genre.Name,
                         book.QuantityInStock, book.Price.ToString() + " hrn");
                     if (book.QuantityInStock == 0)
-                        dataGridView_Products.Rows[dataGridView_Products.Rows.Count - 1].DefaultCellStyle.BackColor = ThemeColor.ChangeColorBrightness(ThemeColor.PrimaryColor, 0.9);
+                        dataGridView_Products.Rows[dataGridView_Products.Rows.Count - 1]
+                            .DefaultCellStyle.BackColor = ThemeColor.ChangeColorBrightness(ThemeColor.PrimaryColor, 0.9);
                 }
             }
+            dataGridView_Products.ClearSelection();
         }
 
         private void dataGridView_Products_MouseClick(object sender, MouseEventArgs e)
@@ -102,14 +103,13 @@ namespace BookStoreApplication.Forms
             {
                 int productId = (int)dataGridView_Products.Rows[currentMouseOverRow].Cells[0].Value;
                 numericUpDown_Quantity.Enabled = true;
-                numericUpDown_Quantity.Value = 1;
                 using (BookStoreDB db = new BookStoreDB())
                 {
                     Book book = db.Book.SingleOrDefault(x => x.ID == productId);
                     Author author = db.Author.SingleOrDefault(x => x.ID == book.AuthorID);
                     textBox_Title.Text = book.Title;
                     textBox_AuthorName.Text = author.FullName;
-                    textBox_Year.Text = book.YearOfIssue.ToString();
+                    textBox_Price.Text = book.Price + " hrn";
 
                     Basket basket = db.Basket.SingleOrDefault(x => x.BookID == book.ID);
                     int quantityInBasket = 0;

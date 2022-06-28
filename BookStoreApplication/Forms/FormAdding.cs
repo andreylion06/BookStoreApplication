@@ -82,7 +82,7 @@ namespace BookStoreApplication.Forms
         private void textBox_Price_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
-            if (e.KeyChar == '.')
+            if (e.KeyChar == ',')
                 e.Handled = textBox_Price.Text.Length == 0 || textBox_Price.Text.Contains(".");
         }
 

@@ -1,4 +1,6 @@
-﻿namespace BookStoreApplication.Forms
+﻿using System;
+
+namespace BookStoreApplication.Forms
 {
     partial class FormAdding
     {

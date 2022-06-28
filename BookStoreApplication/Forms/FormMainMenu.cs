@@ -23,14 +23,16 @@ namespace BookStoreApplication
         public FormMainMenu()
         {
             InitializeComponent();
-            random = new Random();
+
             this.WindowState = FormWindowState.Maximized;
             button_Close.Visible = false;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-            //Thread loadDataThread = new Thread(LoadDataGridViewBooks);
-            //loadDataThread.Start();
             progressBar.Visible = false;
+
             LoadData();
+            timer.Start();
+            SetTime(true);
+            random = new Random();
         }
         private Color SelectThemeColor()
         {
@@ -112,7 +114,8 @@ namespace BookStoreApplication
 
         private void button_Archive_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            label_Title.Text = "Archive";
+            OpenChildForm(new Forms.FormArchive(), sender);
         }
 
         private void button_Settings_Click(object sender, EventArgs e)
@@ -191,6 +194,18 @@ namespace BookStoreApplication
                 button_Settings.Enabled = true;
             }
 
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            if(label_Time.Text.Contains(":")) SetTime(false);
+            else SetTime(true);
+        }
+
+        private void SetTime(bool dots)
+        {
+            string time = dots ? "{0:00}:{1:00}" : "{0:00} {1:00}";
+            label_Time.Text = string.Format(time, DateTime.Now.Hour, DateTime.Now.Minute); ;
         }
     }
 }
