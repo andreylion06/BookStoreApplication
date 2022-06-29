@@ -28,12 +28,57 @@ namespace BookStoreApplication
             button_Close.Visible = false;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             progressBar.Visible = false;
+            this.ActiveControl = label_Authorization;
+            SetChildFormDesign.LoadTheme(button_SignIn);
 
             LoadData();
             timer.Start();
             SetTime(true);
             random = new Random();
         }
+
+        private void FormMainMenu_Load(object sender, EventArgs e)
+        {
+            textBox_Login.GotFocus += Focus;
+            textBox_Login.LostFocus += LostFocus;
+
+            textBox_Password.GotFocus += Focus;
+            textBox_Password.LostFocus += LostFocus;
+        }
+
+        public void Focus(object sender, EventArgs e)
+        {
+            TextBox textBox = (sender as TextBox);
+            if (textBox.Text == "Login" || textBox.Text == "Password")
+            {
+                textBox.Text = "";
+                textBox.BackColor = Color.White;
+            }
+        }
+
+        public void LostFocus(object sender, EventArgs e)
+        {
+            TextBox textBox = (sender as TextBox);
+            if (textBox.Text.Trim().Length == 0)
+            {
+                if(textBox.Name == textBox_Login.Name)
+                {
+                    textBox.Text = "Login";
+                }
+                else if (textBox.Name == textBox_Password.Name)
+                {
+                    textBox.Text = "Password";
+                }
+                textBox.BackColor = Color.LightGray;
+            }  
+        }
+
+        public void AddText(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textBox_Login.Text))
+                textBox_Login.Text = "Login";
+        }
+
         private Color SelectThemeColor()
         {
             int index = random.Next(ThemeColor.ColorList.Count);
@@ -206,6 +251,17 @@ namespace BookStoreApplication
         {
             string time = dots ? "{0:00}:{1:00}" : "{0:00} {1:00}";
             label_Time.Text = string.Format(time, DateTime.Now.Hour, DateTime.Now.Minute); ;
+        }
+
+        private void FormMainMenu_SizeChanged(object sender, EventArgs e)
+        {
+            groupBox_Authorization.Left = (panel_Desktop.Width - groupBox_Authorization.Width) / 2;
+            groupBox_Authorization.Top = (panel_Desktop.Height - groupBox_Authorization.Height) / 2;
+        }
+
+        private void button_SignIn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

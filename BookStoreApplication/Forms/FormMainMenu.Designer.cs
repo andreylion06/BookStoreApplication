@@ -44,6 +44,11 @@ namespace BookStoreApplication
             this.button_Close = new System.Windows.Forms.Button();
             this.label_Title = new System.Windows.Forms.Label();
             this.panel_Desktop = new System.Windows.Forms.Panel();
+            this.groupBox_Authorization = new System.Windows.Forms.GroupBox();
+            this.button_SignIn = new System.Windows.Forms.Button();
+            this.textBox_Password = new System.Windows.Forms.TextBox();
+            this.textBox_Login = new System.Windows.Forms.TextBox();
+            this.label_Authorization = new System.Windows.Forms.Label();
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.timer = new System.Windows.Forms.Timer(this.components);
@@ -51,6 +56,7 @@ namespace BookStoreApplication
             this.panelLogo.SuspendLayout();
             this.panel_TitleBar.SuspendLayout();
             this.panel_Desktop.SuspendLayout();
+            this.groupBox_Authorization.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -236,12 +242,70 @@ namespace BookStoreApplication
             // panel_Desktop
             // 
             this.panel_Desktop.BackColor = System.Drawing.Color.White;
+            this.panel_Desktop.Controls.Add(this.groupBox_Authorization);
             this.panel_Desktop.Controls.Add(this.progressBar);
             this.panel_Desktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Desktop.Location = new System.Drawing.Point(235, 80);
             this.panel_Desktop.Name = "panel_Desktop";
             this.panel_Desktop.Size = new System.Drawing.Size(899, 681);
             this.panel_Desktop.TabIndex = 1;
+            // 
+            // groupBox_Authorization
+            // 
+            this.groupBox_Authorization.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox_Authorization.Controls.Add(this.button_SignIn);
+            this.groupBox_Authorization.Controls.Add(this.textBox_Password);
+            this.groupBox_Authorization.Controls.Add(this.textBox_Login);
+            this.groupBox_Authorization.Controls.Add(this.label_Authorization);
+            this.groupBox_Authorization.Location = new System.Drawing.Point(229, 189);
+            this.groupBox_Authorization.Name = "groupBox_Authorization";
+            this.groupBox_Authorization.Size = new System.Drawing.Size(503, 275);
+            this.groupBox_Authorization.TabIndex = 1;
+            this.groupBox_Authorization.TabStop = false;
+            // 
+            // button_SignIn
+            // 
+            this.button_SignIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.button_SignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_SignIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_SignIn.ForeColor = System.Drawing.Color.White;
+            this.button_SignIn.Location = new System.Drawing.Point(146, 211);
+            this.button_SignIn.Name = "button_SignIn";
+            this.button_SignIn.Size = new System.Drawing.Size(194, 45);
+            this.button_SignIn.TabIndex = 3;
+            this.button_SignIn.Text = "Sign In";
+            this.button_SignIn.UseVisualStyleBackColor = false;
+            this.button_SignIn.Click += new System.EventHandler(this.button_SignIn_Click);
+            // 
+            // textBox_Password
+            // 
+            this.textBox_Password.BackColor = System.Drawing.Color.LightGray;
+            this.textBox_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_Password.Location = new System.Drawing.Point(85, 146);
+            this.textBox_Password.Name = "textBox_Password";
+            this.textBox_Password.Size = new System.Drawing.Size(323, 38);
+            this.textBox_Password.TabIndex = 2;
+            this.textBox_Password.Text = "Password";
+            // 
+            // textBox_Login
+            // 
+            this.textBox_Login.BackColor = System.Drawing.Color.LightGray;
+            this.textBox_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_Login.Location = new System.Drawing.Point(85, 91);
+            this.textBox_Login.Name = "textBox_Login";
+            this.textBox_Login.Size = new System.Drawing.Size(323, 38);
+            this.textBox_Login.TabIndex = 1;
+            this.textBox_Login.Text = "Login";
+            // 
+            // label_Authorization
+            // 
+            this.label_Authorization.AutoSize = true;
+            this.label_Authorization.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_Authorization.Location = new System.Drawing.Point(153, 27);
+            this.label_Authorization.Name = "label_Authorization";
+            this.label_Authorization.Size = new System.Drawing.Size(173, 31);
+            this.label_Authorization.TabIndex = 0;
+            this.label_Authorization.Text = "Authorization";
             // 
             // progressBar
             // 
@@ -251,6 +315,7 @@ namespace BookStoreApplication
             this.progressBar.Size = new System.Drawing.Size(40, 14);
             this.progressBar.Step = 1;
             this.progressBar.TabIndex = 0;
+            this.progressBar.Visible = false;
             // 
             // backgroundWorker
             // 
@@ -273,12 +338,16 @@ namespace BookStoreApplication
             this.MinimumSize = new System.Drawing.Size(1150, 600);
             this.Name = "FormMainMenu";
             this.Text = "FormMainMenu";
+            this.Load += new System.EventHandler(this.FormMainMenu_Load);
+            this.SizeChanged += new System.EventHandler(this.FormMainMenu_SizeChanged);
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             this.panelLogo.PerformLayout();
             this.panel_TitleBar.ResumeLayout(false);
             this.panel_TitleBar.PerformLayout();
             this.panel_Desktop.ResumeLayout(false);
+            this.groupBox_Authorization.ResumeLayout(false);
+            this.groupBox_Authorization.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -300,6 +369,11 @@ namespace BookStoreApplication
         private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.Label label_Time;
         private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.GroupBox groupBox_Authorization;
+        private System.Windows.Forms.TextBox textBox_Login;
+        private System.Windows.Forms.Label label_Authorization;
+        private System.Windows.Forms.TextBox textBox_Password;
+        private System.Windows.Forms.Button button_SignIn;
     }
 }
 

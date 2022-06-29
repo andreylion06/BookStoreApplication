@@ -174,7 +174,7 @@ namespace BookStoreApplication.Forms
             int productId = (int)dataGridView_Products.Rows[selectedRowIndex].Cells[0].Value;
             if (numericUpDown_Quantity.Value == 0)
             {
-                MessageBox.Show("You have selected 0 pieces.", "Information",
+                MessageBox.Show("You have selected 0 items.", "Information",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
