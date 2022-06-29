@@ -108,12 +108,16 @@
     <Compile Include="Migrations\202206181140122_TableSalesEdited.designer.cs">
       <DependentUpon>202206181140122_TableSalesEdited.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206291534515_TableEmployeeEdited.cs" />
+    <Compile Include="Migrations\202206291534515_TableEmployeeEdited.designer.cs">
+      <DependentUpon>202206291534515_TableEmployeeEdited.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Basket.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\BookStoreDB.cs" />
-    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\SignIn.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\Publisher.cs" />
     <Compile Include="Models\Sales.cs" />
@@ -147,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202206181140122_TableSalesEdited.resx">
       <DependentUpon>202206181140122_TableSalesEdited.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206291534515_TableEmployeeEdited.resx">
+      <DependentUpon>202206291534515_TableEmployeeEdited.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

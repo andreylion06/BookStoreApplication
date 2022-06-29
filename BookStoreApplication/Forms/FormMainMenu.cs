@@ -25,13 +25,9 @@ namespace BookStoreApplication
             InitializeComponent();
 
             this.WindowState = FormWindowState.Maximized;
-            button_Close.Visible = false;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-            progressBar.Visible = false;
             this.ActiveControl = label_Authorization;
             SetChildFormDesign.LoadTheme(button_SignIn);
-
-            LoadData();
             timer.Start();
             SetTime(true);
             random = new Random();
@@ -61,7 +57,7 @@ namespace BookStoreApplication
             TextBox textBox = (sender as TextBox);
             if (textBox.Text.Trim().Length == 0)
             {
-                if(textBox.Name == textBox_Login.Name)
+                if (textBox.Name == textBox_Login.Name)
                 {
                     textBox.Text = "Login";
                 }
@@ -70,13 +66,53 @@ namespace BookStoreApplication
                     textBox.Text = "Password";
                 }
                 textBox.BackColor = Color.LightGray;
-            }  
+            }
         }
 
-        public void AddText(object sender, EventArgs e)
+        private void button_SignIn_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(textBox_Login.Text))
-                textBox_Login.Text = "Login";
+            if (textBox_Login.Text.Length == 0)
+            {
+                MessageBox.Show("Login field is empty", "Warning",
+                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (textBox_Password.Text.Length == 0)
+            {
+                MessageBox.Show("Password field is empty", "Warning",
+                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            using (BookStoreDB db = new BookStoreDB())
+            {
+                var user = db.SignIn.SingleOrDefault(x => x.Login == textBox_Login.Text);
+                if (user != null)
+                {
+                    if (user.Password == EncryptPassword(textBox_Password.Text))
+                    {
+                        ClearFields.Clear(groupBox_Authorization);
+                        LostFocus(textBox_Login, null);
+                        LostFocus(textBox_Password, null);
+                        groupBox_Authorization.Visible = false;
+                        this.Load -= FormMainMenu_Load;
+                        LoadData();
+                        return;
+                    }
+                }
+                MessageBox.Show("Incorrect username or password.", "Warning",
+                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private static string EncryptPassword(string input)
+        {
+            using (System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create())
+            {
+                byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input);
+                byte[] hashBytes = md5.ComputeHash(inputBytes);
+
+                return Convert.ToBase64String(hashBytes);
+            }
         }
 
         private Color SelectThemeColor()
@@ -102,7 +138,7 @@ namespace BookStoreApplication
                     currentButton.ForeColor = Color.White;
                     currentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
                     panel_TitleBar.BackColor = color;
-                    panelLogo.BackColor = ThemeColor.ChangeColorBrightness(color, -0.3);
+                    panel_Logo.BackColor = ThemeColor.ChangeColorBrightness(color, -0.3);
                     ThemeColor.PrimaryColor = color;
                     ThemeColor.SecondaryColor = ThemeColor.ChangeColorBrightness(color, -0.3);
                     button_Close.Visible = true;
@@ -111,7 +147,7 @@ namespace BookStoreApplication
         }
         public void DisableButton()
         {
-            foreach (Control previousBtn in panelMenu.Controls)
+            foreach (Control previousBtn in panel_Menu.Controls)
             {
                 if (previousBtn.GetType() == typeof(Button))
                 {
@@ -168,8 +204,26 @@ namespace BookStoreApplication
             ActivateButton(sender);
         }
 
+        private void button_Logout_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Logout?", "Warning",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                groupBox_Authorization.Visible = true;
+                this.ActiveControl = label_Authorization;
+                EnabledMenuButtons(false);
+                CloseChildForm();
+            }
+                
+        }
+
 
         private void button_Close_Click(object sender, EventArgs e)
+        {
+            CloseChildForm();
+        }
+
+        private void CloseChildForm()
         {
             if (activeForm != null) activeForm.Close();
             Reset();
@@ -180,7 +234,7 @@ namespace BookStoreApplication
             DisableButton();
             label_Title.Text = "HOME";
             panel_TitleBar.BackColor = Color.FromArgb(0, 150, 136);
-            panelLogo.BackColor = Color.FromArgb(39, 39, 58);
+            panel_Logo.BackColor = Color.FromArgb(39, 39, 58);
             currentButton = null;
             button_Close.Visible = false;
         }
@@ -232,18 +286,14 @@ namespace BookStoreApplication
             if (e.ProgressPercentage > 95)
             {
                 progressBar.Visible = false;
-                button_Products.Enabled = true;
-                button_Basket.Enabled = true;
-                button_AddingInfo.Enabled = true;
-                button_Archive.Enabled = true;
-                button_Settings.Enabled = true;
+                EnabledMenuButtons(true);
             }
 
         }
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            if(label_Time.Text.Contains(":")) SetTime(false);
+            if (label_Time.Text.Contains(":")) SetTime(false);
             else SetTime(true);
         }
 
@@ -259,9 +309,17 @@ namespace BookStoreApplication
             groupBox_Authorization.Top = (panel_Desktop.Height - groupBox_Authorization.Height) / 2;
         }
 
-        private void button_SignIn_Click(object sender, EventArgs e)
+        private void EnabledMenuButtons(bool enabled)
         {
+            foreach (Control cntrls in panel_Menu.Controls)
+            {
+                if (cntrls.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)cntrls;
+                    btn.Enabled = enabled;
 
+                }
+            }
         }
     }
 }

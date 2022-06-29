@@ -15,7 +15,7 @@ namespace BookStoreApplication
             {
                 if (cntrls.GetType() == typeof(TextBox))
                 {
-                    cntrls.Text = "";
+                    cntrls.Text = null;
                 }
                 else if (cntrls.GetType() == typeof(NumericUpDown))
                 {

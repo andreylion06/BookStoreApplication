@@ -118,6 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="button_Logout.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADdYAAA3WAZBveZwAAAFKSURBVEhL3ZexboMwEIY9ZeozdM/alwhDdl6jfYGuUbfO
+        eZ1ImfIQrAxlAyPANP+P4iqJLjFGtizV0o+EdL4PzndnW23et6pt28wYcxzHUftoGIZDXdev9OGrCQon
+        xe+CgXk/Wus3ybFLCn96sk76vt93XbeDvuYIH52XZbmSHLukAOwIBvRbMoglRSgHvv5TMoil/wHmemPt
+        P5grTdOsJRuroGCWlq0QltozePA/ZpLCnaFP9oZH8OBrXFXVyxx4lOQS4Kd7eBQwRTibjO0ThF93uWhg
+        6pLlO8A1Gdfw2WBmLGw2UOYh2ufM8AvmDz4LzLBxMsO2QNzJpnDbgffCCWa4AoMN3t1gqyShXqogyeWr
+        JOUktM74DUToWvFbZrJNIum2mOQg4KN0YFtnTArJIJbSHegxOc0Vhg/CWXNwdHMpc4kls+zStlVnDeL8
+        hmCN8hMAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="button_Settings.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
@@ -140,7 +152,7 @@
   <data name="button_Archive.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA69AAAOvQFH+5CtAAAAB3RJ
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA68AAAOvAGVvHJJAAAAB3RJ
         TUUH5gYaCx8oSJdZ4QAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAPOSURBVEhL
         zZfLS1RRHMdPGGn0kGwR1SKlli1aRRuJJKUWUmitAltEEW1bRO4sdFH9EW3MjLAgx0dQCWbMjI44KrpI
         QR1HR8fBVz5n1L6fyx0bp5mcEawOfLnn3vN9/M7Do5r/quXl5ZlgMGhGRkbM5OTkjoAWj9zcXNs1hdbX
@@ -164,7 +176,7 @@
   <data name="button_AddingInfo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA69AAAOvQFH+5CtAAAAB3RJ
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA68AAAOvAGVvHJJAAAAB3RJ
         TUUH5gYaCx44TDt4xAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAMNSURBVEhL
         xZa9axRBGMbHM4lyNoLgP2DEYAgYCwshYm2ZNpUfsVVjYyOK/4OksLEUsTCNiggHUcN1WiZcSBFC7pJc
         7tv7yt3F57eZOe7WDeH2FnzgBzvvzOwzH+/ujPGrUCiYXC5nDg4OzOHhYWQ0Gg2TTqfN3t6edfIJ42w2
@@ -234,6 +246,12 @@
         fN7qJET4oNfQ9Zn/hdFqI/zTlt3/BozRNBEI/gX2AAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="backgroundWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="timer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>174, 17</value>
+  </metadata>
   <data name="button_Close.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
@@ -980,10 +998,4 @@
         if/5n/8D3KMZCAo0zNwAAAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="backgroundWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="timer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>174, 17</value>
-  </metadata>
 </root>

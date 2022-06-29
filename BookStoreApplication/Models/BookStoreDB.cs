@@ -13,7 +13,7 @@ namespace Models
         public DbSet<Publisher> Publisher { get; set; }
         public DbSet<Genre> Genre { get; set; }
         public DbSet<Sales> Sales { get; set; }
-        public DbSet<Employee> Employee { get; set; }
+        public DbSet<SignIn> SignIn { get; set; }
         public DbSet<Basket> Basket { get; set; }
         public BookStoreDB() : base("DBConnectionString") { }
     }
