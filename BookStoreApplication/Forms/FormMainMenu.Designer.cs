@@ -47,12 +47,12 @@ namespace BookStoreApplication
             this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.button_Close = new System.Windows.Forms.Button();
-            this.button_Settings = new System.Windows.Forms.Button();
+            this.button_Logout = new System.Windows.Forms.Button();
+            this.button_Statistics = new System.Windows.Forms.Button();
             this.button_Archive = new System.Windows.Forms.Button();
             this.button_AddingInfo = new System.Windows.Forms.Button();
             this.button_Basket = new System.Windows.Forms.Button();
             this.button_Products = new System.Windows.Forms.Button();
-            this.button_Logout = new System.Windows.Forms.Button();
             this.panel_Menu.SuspendLayout();
             this.panel_Logo.SuspendLayout();
             this.panel_TitleBar.SuspendLayout();
@@ -64,7 +64,7 @@ namespace BookStoreApplication
             // 
             this.panel_Menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.panel_Menu.Controls.Add(this.button_Logout);
-            this.panel_Menu.Controls.Add(this.button_Settings);
+            this.panel_Menu.Controls.Add(this.button_Statistics);
             this.panel_Menu.Controls.Add(this.button_Archive);
             this.panel_Menu.Controls.Add(this.button_AddingInfo);
             this.panel_Menu.Controls.Add(this.button_Basket);
@@ -146,6 +146,7 @@ namespace BookStoreApplication
             // button_SignIn
             // 
             this.button_SignIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.button_SignIn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_SignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_SignIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button_SignIn.ForeColor = System.Drawing.Color.White;
@@ -224,27 +225,47 @@ namespace BookStoreApplication
             this.button_Close.Visible = false;
             this.button_Close.Click += new System.EventHandler(this.button_Close_Click);
             // 
-            // button_Settings
+            // button_Logout
             // 
-            this.button_Settings.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button_Settings.Enabled = false;
-            this.button_Settings.FlatAppearance.BorderSize = 0;
-            this.button_Settings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Settings.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_Settings.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button_Settings.Image = ((System.Drawing.Image)(resources.GetObject("button_Settings.Image")));
-            this.button_Settings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_Settings.Location = new System.Drawing.Point(0, 400);
-            this.button_Settings.Name = "button_Settings";
-            this.button_Settings.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.button_Settings.Size = new System.Drawing.Size(235, 80);
-            this.button_Settings.TabIndex = 5;
-            this.button_Settings.Text = "      Admin Settings";
-            this.button_Settings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_Settings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button_Settings.UseVisualStyleBackColor = true;
-            this.button_Settings.Visible = false;
-            this.button_Settings.Click += new System.EventHandler(this.button_Settings_Click);
+            this.button_Logout.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button_Logout.Enabled = false;
+            this.button_Logout.FlatAppearance.BorderSize = 0;
+            this.button_Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_Logout.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button_Logout.Image = ((System.Drawing.Image)(resources.GetObject("button_Logout.Image")));
+            this.button_Logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_Logout.Location = new System.Drawing.Point(0, 480);
+            this.button_Logout.Name = "button_Logout";
+            this.button_Logout.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.button_Logout.Size = new System.Drawing.Size(235, 80);
+            this.button_Logout.TabIndex = 6;
+            this.button_Logout.Text = "      Logout";
+            this.button_Logout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_Logout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button_Logout.UseVisualStyleBackColor = true;
+            this.button_Logout.Click += new System.EventHandler(this.button_Logout_Click);
+            // 
+            // button_Statistics
+            // 
+            this.button_Statistics.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button_Statistics.Enabled = false;
+            this.button_Statistics.FlatAppearance.BorderSize = 0;
+            this.button_Statistics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Statistics.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_Statistics.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button_Statistics.Image = ((System.Drawing.Image)(resources.GetObject("button_Statistics.Image")));
+            this.button_Statistics.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_Statistics.Location = new System.Drawing.Point(0, 400);
+            this.button_Statistics.Name = "button_Statistics";
+            this.button_Statistics.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.button_Statistics.Size = new System.Drawing.Size(235, 80);
+            this.button_Statistics.TabIndex = 5;
+            this.button_Statistics.Text = "      Statistics";
+            this.button_Statistics.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_Statistics.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button_Statistics.UseVisualStyleBackColor = true;
+            this.button_Statistics.Click += new System.EventHandler(this.button_Statistics_Click);
             // 
             // button_Archive
             // 
@@ -330,27 +351,6 @@ namespace BookStoreApplication
             this.button_Products.UseVisualStyleBackColor = true;
             this.button_Products.Click += new System.EventHandler(this.button_Products_Click);
             // 
-            // button_Logout
-            // 
-            this.button_Logout.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button_Logout.Enabled = false;
-            this.button_Logout.FlatAppearance.BorderSize = 0;
-            this.button_Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_Logout.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button_Logout.Image = ((System.Drawing.Image)(resources.GetObject("button_Logout.Image")));
-            this.button_Logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_Logout.Location = new System.Drawing.Point(0, 480);
-            this.button_Logout.Name = "button_Logout";
-            this.button_Logout.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.button_Logout.Size = new System.Drawing.Size(235, 80);
-            this.button_Logout.TabIndex = 6;
-            this.button_Logout.Text = "      Logout";
-            this.button_Logout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_Logout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button_Logout.UseVisualStyleBackColor = true;
-            this.button_Logout.Click += new System.EventHandler(this.button_Logout_Click);
-            // 
             // FormMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -380,7 +380,7 @@ namespace BookStoreApplication
 
         private System.Windows.Forms.Panel panel_Menu;
         private System.Windows.Forms.Panel panel_Logo;
-        private System.Windows.Forms.Button button_Settings;
+        private System.Windows.Forms.Button button_Statistics;
         private System.Windows.Forms.Button button_Archive;
         public System.Windows.Forms.Button button_AddingInfo;
         private System.Windows.Forms.Button button_Basket;

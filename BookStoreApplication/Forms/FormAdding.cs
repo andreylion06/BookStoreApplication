@@ -21,7 +21,6 @@ namespace BookStoreApplication.Forms
         }
 
         public int IdEditBook = -1;
-
         private void FormAdding_Load(object sender, EventArgs e)
         {
             SetChildFormDesign.LoadTheme(this);
@@ -320,7 +319,6 @@ namespace BookStoreApplication.Forms
                 dataGridView_Publisher.DataSource = db.Publisher.ToList();
             }
         }
-
 
         private void AddPublisher()
         {

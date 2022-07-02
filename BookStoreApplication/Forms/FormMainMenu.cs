@@ -49,6 +49,10 @@ namespace BookStoreApplication
             {
                 textBox.Text = "";
                 textBox.BackColor = Color.White;
+                if (textBox.Name == textBox_Password.Name)
+                {
+                    textBox.PasswordChar = '*';
+                }
             }
         }
 
@@ -64,6 +68,7 @@ namespace BookStoreApplication
                 else if (textBox.Name == textBox_Password.Name)
                 {
                     textBox.Text = "Password";
+                    textBox.PasswordChar = '\0';
                 }
                 textBox.BackColor = Color.LightGray;
             }
@@ -199,9 +204,10 @@ namespace BookStoreApplication
             OpenChildForm(new Forms.FormArchive(), sender);
         }
 
-        private void button_Settings_Click(object sender, EventArgs e)
+        private void button_Statistics_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            label_Title.Text = "Statistics";
+            OpenChildForm(new Forms.FormStatistics(), sender);
         }
 
         private void button_Logout_Click(object sender, EventArgs e)
@@ -216,7 +222,6 @@ namespace BookStoreApplication
             }
                 
         }
-
 
         private void button_Close_Click(object sender, EventArgs e)
         {
