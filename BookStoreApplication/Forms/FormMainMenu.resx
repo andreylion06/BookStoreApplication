@@ -121,7 +121,7 @@
   <data name="button_Logout.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAN
-        0wAADdMBvdUcagAAAUpJREFUSEvdl7FugzAQhj1l6jN0z9qXCEN2XqN9ga5Rt855nUiZ8hCsDGUDI8A0
+        0gAADdIBb5L+jgAAAUpJREFUSEvdl7FugzAQhj1l6jN0z9qXCEN2XqN9ga5Rt855nUiZ8hCsDGUDI8A0
         /4/iKokuMUa2LNXSj4R0vg/Od2dbbd63qm3bzBhzHMdR+2gYhkNd16/04asJCifF74KBeT9a6zfJsUsK
         f3qyTvq+33ddt4O+5ggfnZdluZIcu6QA7AgG9FsyiCVFKAe+/lMyiKX/AeZ6Y+0/mCtN06wlG6ugYJaW
         rRCW2jN48D9mksKdoU/2hkfw4GtcVdXLHHiU5BLgp3t4FDBFOJuM7ROEX3e5aGDqkuU7wDUZ1/DZYGYs
@@ -133,7 +133,7 @@
   <data name="button_Statistics.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAB3RJ
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7CAAAOwgEVKEqAAAAAB3RJ
         TUUH5gcCCjI01bNjtgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAY4SURBVEhL
         pZd9TNVVGMd/ohOFCwqIqMxMG2g5M21WLhUlmlkac61NmzWnlb2Yy80521w5tFo6YVNv8fKHbimNd650
         RVrQWmOyFDcmopMA8R1fUV58A+zzPf1+7nq9IFtn++78zjnP83yf5znPOedey79dvXrVunDhgtXd3W21
@@ -261,12 +261,6 @@
         fN7qJET4oNfQ9Zn/hdFqI/zTlt3/BozRNBEI/gX2AAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="backgroundWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="timer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>174, 17</value>
-  </metadata>
   <data name="button_Close.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
@@ -1013,4 +1007,10 @@
         if/5n/8D3KMZCAo0zNwAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="backgroundWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="timer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>174, 17</value>
+  </metadata>
 </root>

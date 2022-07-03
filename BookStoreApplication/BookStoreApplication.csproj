@@ -75,9 +75,9 @@
     <Compile Include="Forms\QuantityEditor.Designer.cs">
       <DependentUpon>QuantityEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="HelperClasses\CheckBasketAfterActions.cs" />
-    <Compile Include="HelperClasses\ClearFields.cs" />
-    <Compile Include="HelperClasses\ContextMenu.cs" />
+    <Compile Include="HelperClasses\ActionClasses\CheckBasketAfterActions.cs" />
+    <Compile Include="HelperClasses\ActionClasses\ClearFields.cs" />
+    <Compile Include="HelperClasses\VisualClasses\ContextMenu.cs" />
     <Compile Include="Forms\FormBasket.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,7 +102,7 @@
     <Compile Include="Forms\FormProducts.Designer.cs">
       <DependentUpon>FormProducts.cs</DependentUpon>
     </Compile>
-    <Compile Include="HelperClasses\CountTotal.cs" />
+    <Compile Include="HelperClasses\ActionClasses\CountTotal.cs" />
     <Compile Include="Migrations\202206061109351_CreateDataBase.cs" />
     <Compile Include="Migrations\202206061109351_CreateDataBase.designer.cs">
       <DependentUpon>202206061109351_CreateDataBase.cs</DependentUpon>
@@ -130,8 +130,8 @@
     <Compile Include="Models\Sales.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="HelperClasses\SetChildFormDesign.cs" />
-    <Compile Include="HelperClasses\ThemeColor.cs" />
+    <Compile Include="HelperClasses\VisualClasses\SetChildFormDesign.cs" />
+    <Compile Include="HelperClasses\VisualClasses\ThemeColor.cs" />
     <EmbeddedResource Include="Forms\FormArchive.resx">
       <DependentUpon>FormArchive.cs</DependentUpon>
     </EmbeddedResource>

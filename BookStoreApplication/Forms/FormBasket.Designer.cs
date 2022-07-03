@@ -31,14 +31,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox = new System.Windows.Forms.GroupBox();
-            this.button_Sell = new System.Windows.Forms.Button();
-            this.dataGridView_Basket = new System.Windows.Forms.DataGridView();
             this.groupBox_Total = new System.Windows.Forms.GroupBox();
             this.label_Total = new System.Windows.Forms.Label();
             this.label_hrn = new System.Windows.Forms.Label();
+            this.button_Sell = new System.Windows.Forms.Button();
+            this.dataGridView_Basket = new System.Windows.Forms.DataGridView();
             this.groupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Basket)).BeginInit();
             this.groupBox_Total.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Basket)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox
@@ -52,13 +52,46 @@
             this.groupBox.TabIndex = 18;
             this.groupBox.TabStop = false;
             // 
+            // groupBox_Total
+            // 
+            this.groupBox_Total.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox_Total.Controls.Add(this.label_Total);
+            this.groupBox_Total.Controls.Add(this.label_hrn);
+            this.groupBox_Total.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox_Total.Location = new System.Drawing.Point(551, 38);
+            this.groupBox_Total.Name = "groupBox_Total";
+            this.groupBox_Total.Size = new System.Drawing.Size(220, 145);
+            this.groupBox_Total.TabIndex = 9;
+            this.groupBox_Total.TabStop = false;
+            this.groupBox_Total.Text = "Total";
+            // 
+            // label_Total
+            // 
+            this.label_Total.AutoSize = true;
+            this.label_Total.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_Total.Location = new System.Drawing.Point(27, 55);
+            this.label_Total.Name = "label_Total";
+            this.label_Total.Size = new System.Drawing.Size(123, 42);
+            this.label_Total.TabIndex = 78;
+            this.label_Total.Text = "00000";
+            // 
+            // label_hrn
+            // 
+            this.label_hrn.AutoSize = true;
+            this.label_hrn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_hrn.Location = new System.Drawing.Point(156, 79);
+            this.label_hrn.Name = "label_hrn";
+            this.label_hrn.Size = new System.Drawing.Size(43, 24);
+            this.label_hrn.TabIndex = 77;
+            this.label_hrn.Text = "hrn.";
+            // 
             // button_Sell
             // 
             this.button_Sell.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_Sell.Location = new System.Drawing.Point(57, 84);
+            this.button_Sell.Location = new System.Drawing.Point(35, 50);
             this.button_Sell.Name = "button_Sell";
-            this.button_Sell.Size = new System.Drawing.Size(195, 72);
+            this.button_Sell.Size = new System.Drawing.Size(220, 133);
             this.button_Sell.TabIndex = 8;
             this.button_Sell.Text = "Sell";
             this.button_Sell.UseVisualStyleBackColor = true;
@@ -101,39 +134,6 @@
             this.dataGridView_Basket.DoubleClick += new System.EventHandler(this.dataGridView_Basket_DoubleClick);
             this.dataGridView_Basket.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView_Basket_MouseClick);
             // 
-            // groupBox_Total
-            // 
-            this.groupBox_Total.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox_Total.Controls.Add(this.label_Total);
-            this.groupBox_Total.Controls.Add(this.label_hrn);
-            this.groupBox_Total.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox_Total.Location = new System.Drawing.Point(551, 38);
-            this.groupBox_Total.Name = "groupBox_Total";
-            this.groupBox_Total.Size = new System.Drawing.Size(220, 145);
-            this.groupBox_Total.TabIndex = 9;
-            this.groupBox_Total.TabStop = false;
-            this.groupBox_Total.Text = "Total";
-            // 
-            // label_Total
-            // 
-            this.label_Total.AutoSize = true;
-            this.label_Total.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_Total.Location = new System.Drawing.Point(27, 55);
-            this.label_Total.Name = "label_Total";
-            this.label_Total.Size = new System.Drawing.Size(123, 42);
-            this.label_Total.TabIndex = 78;
-            this.label_Total.Text = "00000";
-            // 
-            // label_hrn
-            // 
-            this.label_hrn.AutoSize = true;
-            this.label_hrn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_hrn.Location = new System.Drawing.Point(156, 79);
-            this.label_hrn.Name = "label_hrn";
-            this.label_hrn.Size = new System.Drawing.Size(43, 24);
-            this.label_hrn.TabIndex = 77;
-            this.label_hrn.Text = "hrn.";
-            // 
             // FormBasket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -145,9 +145,9 @@
             this.Text = "FormBasket";
             this.Load += new System.EventHandler(this.FormBasket_Load);
             this.groupBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Basket)).EndInit();
             this.groupBox_Total.ResumeLayout(false);
             this.groupBox_Total.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Basket)).EndInit();
             this.ResumeLayout(false);
 
         }

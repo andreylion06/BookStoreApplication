@@ -55,7 +55,7 @@ namespace BookStoreApplication.Forms
                 NumberOfPages, Genre, QuantityInStock, Price);
         }
 
-        public void LoadDataGridViewBooks(string search = null, bool all = false)
+        public void LoadDataGridViewBooks()
         {
             dataGridView_Products.Rows.Clear();
             using (BookStoreDB db = new BookStoreDB())
@@ -64,8 +64,9 @@ namespace BookStoreApplication.Forms
                 if (books.Count == 0) return;
                 foreach (var book in books)
                 {
-                    if ((book.QuantityInStock == 0 && all == false)
-                        || (search != null && !book.Title.Contains(search))) continue;
+                    if ((book.QuantityInStock == 0 && checkBox_All.Checked == false) || 
+                        (textBox_Search.Text.Trim() != null 
+                        && !book.Title.Contains(textBox_Search.Text.Trim()))) continue;
                     var author = db.Author.SingleOrDefault(x => x.ID == book.AuthorID);
                     var publisher = db.Publisher.SingleOrDefault(x => x.ID == book.PublisherID);
                     var genre = db.Genre.SingleOrDefault(x => x.ID == book.GenreID);
@@ -156,7 +157,7 @@ namespace BookStoreApplication.Forms
 
         private void textBox_Search_KeyUp(object sender, KeyEventArgs e)
         {
-            LoadDataGridViewBooks(textBox_Search.Text.Trim());
+            LoadDataGridViewBooks();
             if (textBox_Title.Text.Length != 0) ClearFields.Clear(groupBox_Basket);
         }
 
@@ -211,8 +212,7 @@ namespace BookStoreApplication.Forms
 
         private void checkBox_All_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox_All.Checked) LoadDataGridViewBooks(null, true);
-            else LoadDataGridViewBooks(null, false);
+            LoadDataGridViewBooks();
         }
     }
 }

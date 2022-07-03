@@ -20,6 +20,9 @@ namespace BookStoreApplication.Forms
 
         private void FormStatistics_Load(object sender, EventArgs e)
         {
+            SetChildFormDesign.LoadTheme(this);
+            LoadDataGridViewColumnsRevenue();
+            LoadDataGridViewColumnsCount();
             LoadCharts();
         }
 
@@ -39,8 +42,11 @@ namespace BookStoreApplication.Forms
                     if (date != sale.DateOfSale.Date)
                     {
                         chart_Revenue.Series["Revenue"].Points.AddXY(date.ToString("dd.MM"), totalRevenue);
+                        dataGridView_Revenue.Rows.Add(date.ToString("dd.MM"), totalRevenue.ToString());
+
                         chart_Count.Series["Count"].Points.AddXY(date.ToString("dd.MM"), totalCount);
-                        
+                        dataGridView_Count.Rows.Add(date.ToString("dd.MM"), totalCount.ToString());
+
                         date = sale.DateOfSale.Date;
                         totalRevenue = 0;
                         totalCount = 0;
@@ -50,9 +56,33 @@ namespace BookStoreApplication.Forms
                     totalCount++;
                     
                 }
+                chart_Revenue.Series["Revenue"].Points.AddXY(date.ToString("dd.MM"), totalRevenue);
+                dataGridView_Revenue.Rows.Add(date.ToString("dd.MM"), totalRevenue.ToString());
+
+                chart_Count.Series["Count"].Points.AddXY(date.ToString("dd.MM"), totalCount);
+                dataGridView_Count.Rows.Add(date.ToString("dd.MM"), totalCount.ToString());
+
                 chart_Revenue.Series["Revenue"].Color = ThemeColor.PrimaryColor;
                 chart_Count.Series["Count"].Color = ThemeColor.PrimaryColor;
             }
+        }
+
+        private void LoadDataGridViewColumnsRevenue()
+        {
+            DataGridViewTextBoxColumn Date = new DataGridViewTextBoxColumn();
+            Date.Name = "Date";
+            DataGridViewTextBoxColumn Revenue = new DataGridViewTextBoxColumn();
+            Revenue.Name = "Revenue";
+            dataGridView_Revenue.Columns.AddRange(Date, Revenue);
+        }
+
+        private void LoadDataGridViewColumnsCount()
+        {
+            DataGridViewTextBoxColumn Date = new DataGridViewTextBoxColumn();
+            Date.Name = "Date";
+            DataGridViewTextBoxColumn Count = new DataGridViewTextBoxColumn();
+            Count.Name = "Count";
+            dataGridView_Count.Columns.AddRange(Date, Count);
         }
     }
 }

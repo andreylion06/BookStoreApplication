@@ -184,11 +184,6 @@ namespace BookStoreApplication.Forms
             this.numericUpDown_QuantityInStock.Name = "numericUpDown_QuantityInStock";
             this.numericUpDown_QuantityInStock.Size = new System.Drawing.Size(290, 49);
             this.numericUpDown_QuantityInStock.TabIndex = 67;
-            this.numericUpDown_QuantityInStock.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // label_Publisher
             // 
@@ -237,11 +232,6 @@ namespace BookStoreApplication.Forms
             this.numericUpDown_NumberOfPages.Name = "numericUpDown_NumberOfPages";
             this.numericUpDown_NumberOfPages.Size = new System.Drawing.Size(290, 49);
             this.numericUpDown_NumberOfPages.TabIndex = 66;
-            this.numericUpDown_NumberOfPages.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // numericUpDown_Year
             // 
