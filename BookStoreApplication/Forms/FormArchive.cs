@@ -48,10 +48,19 @@ namespace BookStoreApplication.Forms
             Price.Name = "Price";
             DataGridViewTextBoxColumn Quantity = new DataGridViewTextBoxColumn();
             Quantity.Name = "Quantity";
-            
+
 
             dataGridView_Archive.Columns.AddRange(Information, Id, Title, Author,
                 Publisher, YearOfIssue, Price, Quantity);
+            DisableSortingInDataGridView();
+        }
+
+        private void DisableSortingInDataGridView()
+        {
+            foreach (DataGridViewColumn column in dataGridView_Archive.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
 
         public void LoadDataGridViewArchive(DateTime from)
@@ -62,7 +71,7 @@ namespace BookStoreApplication.Forms
             {
                 var sales = db.Sales.Where(x => x.DateOfSale >= from).ToList();
                 if (sales.Count == 0) return;
-                
+
                 DateTime date = sales[0].DateOfSale;
                 dataGridView_Archive.Rows.Add("\t" + date.ToString("dd.MM.yyyy hh:mm:ss"));
                 SetChildFormDesign.SetLastDataGridRowColor(dataGridView_Archive);

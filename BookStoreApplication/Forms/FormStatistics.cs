@@ -42,7 +42,7 @@ namespace BookStoreApplication.Forms
                     if (date != sale.DateOfSale.Date)
                     {
                         chart_Revenue.Series["Revenue"].Points.AddXY(date.ToString("dd.MM"), totalRevenue);
-                        dataGridView_Revenue.Rows.Add(date.ToString("dd.MM"), totalRevenue.ToString());
+                        dataGridView_Revenue.Rows.Add(date.ToString("dd.MM"), totalRevenue.ToString() + "hrn");
 
                         chart_Count.Series["Count"].Points.AddXY(date.ToString("dd.MM"), totalCount);
                         dataGridView_Count.Rows.Add(date.ToString("dd.MM"), totalCount.ToString());
@@ -54,10 +54,10 @@ namespace BookStoreApplication.Forms
                     var book = db.Book.SingleOrDefault(x => x.ID == sale.BookID);
                     totalRevenue += book.Price * sale.Count;
                     totalCount++;
-                    
+
                 }
                 chart_Revenue.Series["Revenue"].Points.AddXY(date.ToString("dd.MM"), totalRevenue);
-                dataGridView_Revenue.Rows.Add(date.ToString("dd.MM"), totalRevenue.ToString());
+                dataGridView_Revenue.Rows.Add(date.ToString("dd.MM"), totalRevenue.ToString() + "hrn");
 
                 chart_Count.Series["Count"].Points.AddXY(date.ToString("dd.MM"), totalCount);
                 dataGridView_Count.Rows.Add(date.ToString("dd.MM"), totalCount.ToString());

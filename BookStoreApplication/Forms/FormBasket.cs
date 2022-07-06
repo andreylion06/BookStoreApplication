@@ -141,7 +141,7 @@ namespace BookStoreApplication.Forms
 
                         var author = db.Author.SingleOrDefault(x => x.ID == book.AuthorID);
                         message += $"{book.Title}  , {author.FullName}  , {book.YearOfIssue}  " +
-                            $", {book.Price}hrn   x{item.Count}   =   {book.Price * item.Count}hrn" 
+                            $", {book.Price}hrn   x{item.Count}   =   {book.Price * item.Count}hrn"
                             + Environment.NewLine;
 
                         book.QuantityInStock -= item.Count;
